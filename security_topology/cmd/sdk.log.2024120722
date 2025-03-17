@@ -1,0 +1,6 @@
+2024-12-07 22:44:14.006	[DEBUG]	[SDK]	v2@v2.3.6/sdk_config.go:1162	[SDK] use tls
+2024-12-07 22:44:14.006	[DEBUG]	[SDK]	v2@v2.3.6/sdk_system_contract.go:525	[SDK] begin to QUERY system contract, [method:GET_LAST_BLOCK]/[withRWSet:false]
+2024-12-07 22:44:14.007	[ERROR]	[SDK]	v2@v2.3.6/sdk_client.go:480	[SDK] request to [0-127.0.0.1:12301-chainmaker.org] failed rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 127.0.0.1:12301: connect: connection refused", try to connect another node
+2024-12-07 22:49:02.479	[DEBUG]	[SDK]	v2@v2.3.6/sdk_config.go:1162	[SDK] use tls
+2024-12-07 22:49:02.479	[DEBUG]	[SDK]	v2@v2.3.6/sdk_system_contract.go:525	[SDK] begin to QUERY system contract, [method:GET_LAST_BLOCK]/[withRWSet:false]
+2024-12-07 22:49:02.479	[ERROR]	[SDK]	v2@v2.3.6/sdk_client.go:480	[SDK] request to [0-127.0.0.1:12301-chainmaker.org] failed rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 127.0.0.1:12301: connect: connection refused", try to connect another node
