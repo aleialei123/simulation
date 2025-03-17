@@ -1,0 +1,12 @@
+version: '3.7'
+
+volumes:
+  need_to_fill_1
+
+networks:
+  test:
+    name: fabric_test
+
+services:
+  need_to_fill_2
+  
