@@ -11,6 +11,8 @@ import (
 
 	"github.com/docker/go-connections/nat"
 
+	"strings"
+
 	"github.com/docker/docker/api/types/container"
 	docker "github.com/docker/docker/client"
 )
@@ -41,8 +43,6 @@ func CreateFabricPeerNode(client *docker.Client, fabricPeerNode *nodes.FabricPee
 		"net.ipv6.seg6_flowlabel":                "1",
 	}
 	// 3. 获取配置
-	// simulationDir := configs.TopConfiguration.PathConfig.ConfigGeneratePath
-	// nodeDir := filepath.Join(simulationDir, fabricPeerNode.ContainerName)
 	var cpuLimit float64
 	var memoryLimit float64
 	enableFrr := configs.TopConfiguration.NetworkConfig.EnableFrr
@@ -54,14 +54,13 @@ func CreateFabricPeerNode(client *docker.Client, fabricPeerNode *nodes.FabricPee
 	peerRpcStartPort := configs.TopConfiguration.FabricConfig.PeerRpcStartPort + fabricPeerNode.Id
 	simulationDir := configs.TopConfiguration.PathConfig.ConfigGeneratePath
 	nodeDir := filepath.Join(simulationDir, fabricPeerNode.ContainerName)
-	// ipv4 := strings.Split(fabricPeerNode.Interfaces[0].Ipv4Addr, "/")[0]
-	// for _, iface := range fabricPeerNode.Interfaces {
-	// 	if strings.HasPrefix(iface.IfName, "fp") && strings.HasSuffix(iface.IfName, "_idx1") {
-	// 		ipv4 = strings.Split(fabricPeerNode.Interfaces[0].Ipv4Addr, "/")[0]
-	// 		break
-	// 	}
-	// 	fmt.Printf("IfName: %s, Ipv4Addr: %s,Ifidx:%d,LinkIdentifier:%d\n", iface.IfName, iface.Ipv4Addr, iface.Ifidx, iface.LinkIdentifier)
-	// }
+	ipv4 := strings.Split(fabricPeerNode.Interfaces[0].Ipv4Addr, "/")[0]
+	for _, iface := range fabricPeerNode.Interfaces {
+		if strings.HasPrefix(iface.IfName, "fp") && strings.HasSuffix(iface.IfName, "_idx1") {
+			ipv4 = strings.Split(fabricPeerNode.Interfaces[0].Ipv4Addr, "/")[0]
+			break
+		}
+	}
 	// 4. 创建容器卷映射
 	volumes := []string{
 		// fmt.Sprintf("%s:%s", nodeDir, fmt.Sprintf("/configuration/%s", fabricPeerNode.ContainerName)),
@@ -92,20 +91,20 @@ func CreateFabricPeerNode(client *docker.Client, fabricPeerNode *nodes.FabricPee
 		fmt.Sprintf("%s=%s", "CORE_PEER_TLS_KEY_FILE", "/etc/hyperledger/fabric/tls/server.key"),
 		fmt.Sprintf("%s=%s", "CORE_PEER_TLS_ROOTCERT_FILE", "/etc/hyperledger/fabric/tls/ca.crt"),
 		fmt.Sprintf("%s=%s", "CORE_PEER_ID", fmt.Sprintf("peer0.org%d.example.com", fabricPeerNode.Id)),
-		fmt.Sprintf("%s=%s", "CORE_PEER_ADDRESS", fmt.Sprintf("peer0.org%d.example.com:%d", fabricPeerNode.Id, peerListenPort)),
-		// fmt.Sprintf("%s=%s", "CORE_PEER_ADDRESS", fmt.Sprintf("%s:%d", ipv4, peerListenPort)),
+		// fmt.Sprintf("%s=%s", "CORE_PEER_ADDRESS", fmt.Sprintf("peer0.org%d.example.com:%d", fabricPeerNode.Id, peerListenPort)),
+		fmt.Sprintf("%s=%s", "CORE_PEER_ADDRESS", fmt.Sprintf("%s:%d", ipv4, peerListenPort)),
 		fmt.Sprintf("%s=%s", "CORE_PEER_LISTENADDRESS", fmt.Sprintf("0.0.0.0:%d", peerListenPort)),
-		fmt.Sprintf("%s=%s", "CORE_PEER_CHAINCODEADDRESS", fmt.Sprintf("peer0.org%d.example.com:%d", fabricPeerNode.Id, peerChainCodePort)),
-		// fmt.Sprintf("%s:%s", "CORE_PEER_CHAINCODEADDRESS", fmt.Sprintf("%s:%d", ipv4, peerChainCodePort)),
+		// fmt.Sprintf("%s=%s", "CORE_PEER_CHAINCODEADDRESS", fmt.Sprintf("peer0.org%d.example.com:%d", fabricPeerNode.Id, peerChainCodePort)),
+		fmt.Sprintf("%s:%s", "CORE_PEER_CHAINCODEADDRESS", fmt.Sprintf("%s:%d", ipv4, peerChainCodePort)),
 		fmt.Sprintf("%s=%s", "CORE_PEER_CHAINCODELISTENADDRESS", fmt.Sprintf("0.0.0.0:%d", peerChainCodePort)),
-		fmt.Sprintf("%s=%s", "CORE_PEER_GOSSIP_EXTERNALENDPOINT", fmt.Sprintf("peer0.org%d.example.com:%d", fabricPeerNode.Id, peerListenPort)),
-		// fmt.Sprintf("%s:%s", "CORE_PEER_GOSSIP_EXTERNALENDPOINT", fmt.Sprintf("%s:%d", ipv4, peerListenPort)),
-		fmt.Sprintf("%s=%s", "CORE_PEER_GOSSIP_BOOTSTRAP", fmt.Sprintf("peer0.org%d.example.com:%d", fabricPeerNode.Id, peerListenPort)),
-		// fmt.Sprintf("%s:%s", "CORE_PEER_GOSSIP_BOOTSTRAP", fmt.Sprintf("%s:%d", ipv4, peerListenPort)),
+		// fmt.Sprintf("%s=%s", "CORE_PEER_GOSSIP_EXTERNALENDPOINT", fmt.Sprintf("peer0.org%d.example.com:%d", fabricPeerNode.Id, peerListenPort)),
+		fmt.Sprintf("%s:%s", "CORE_PEER_GOSSIP_EXTERNALENDPOINT", fmt.Sprintf("%s:%d", ipv4, peerListenPort)),
+		// fmt.Sprintf("%s=%s", "CORE_PEER_GOSSIP_BOOTSTRAP", fmt.Sprintf("peer0.org%d.example.com:%d", fabricPeerNode.Id, peerListenPort)),
+		fmt.Sprintf("%s:%s", "CORE_PEER_GOSSIP_BOOTSTRAP", fmt.Sprintf("%s:%d", ipv4, peerListenPort)),
 		fmt.Sprintf("%s=%s", "CORE_PEER_LOCALMSPID", fmt.Sprintf("Org%dMSP", fabricPeerNode.Id)),
 		fmt.Sprintf("%s=%s", "CORE_PEER_MSPCONFIGPATH", "/etc/hyperledger/fabric/msp"),
-		fmt.Sprintf("%s=%s", "CORE_OPERATIONS_LISTENADDRESS", fmt.Sprintf("peer0.org%d.example.com:%d", fabricPeerNode.Id, peerOperationPort)),
-		// fmt.Sprintf("%s:%s", "CORE_OPERATIONS_LISTENADDRESS", fmt.Sprintf("%s:%d", ipv4, peerOperationPort)),
+		// fmt.Sprintf("%s=%s", "CORE_OPERATIONS_LISTENADDRESS", fmt.Sprintf("peer0.org%d.example.com:%d", fabricPeerNode.Id, peerOperationPort)),
+		fmt.Sprintf("%s:%s", "CORE_OPERATIONS_LISTENADDRESS", fmt.Sprintf("%s:%d", ipv4, peerOperationPort)),
 		fmt.Sprintf("%s=%s", "CORE_METRICS_PROVIDER", "prometheus"),
 		fmt.Sprintf("%s=%s", "CHAINCODE_AS_A_SERVICE_BUILDER_CONFIG", fmt.Sprintf("{\"peername\":\"peer0org%d\"}", fabricPeerNode.Id)),
 		fmt.Sprintf("%s=%s", "CORE_CHAINCODE_EXECUTETIMEOUT", "300s"),
@@ -169,9 +168,9 @@ func CreateFabricPeerNode(client *docker.Client, fabricPeerNode *nodes.FabricPee
 
 	// 8. 创建容器配置
 	containerConfig := &container.Config{
-		Image:        configs.TopConfiguration.ImagesConfig.FabricPeerImageName,
-		Hostname:     fmt.Sprintf("peer0"),
-		Domainname:   fmt.Sprintf("org%d.example.com", fabricPeerNode.Id),
+		Image: configs.TopConfiguration.ImagesConfig.FabricPeerImageName,
+		// Hostname:     fmt.Sprintf("peer0"),
+		// Domainname:   fmt.Sprintf("org%d.example.com", fabricPeerNode.Id),
 		Tty:          true,
 		Env:          envs,
 		ExposedPorts: exposedPorts,
@@ -182,11 +181,11 @@ func CreateFabricPeerNode(client *docker.Client, fabricPeerNode *nodes.FabricPee
 	// 9. hostConfig
 	hostConfig := &container.HostConfig{
 		// 容器数据卷映射
-		Binds:      volumes,
-		CapAdd:     []string{"NET_ADMIN"},
-		Privileged: true,
-		Sysctls:    sysctls,
-		// ExtraHosts:   []string{fmt.Sprintf("peer0.org%d.example.com:%s", fabricPeerNode.Id, ipv4)},
+		Binds:        volumes,
+		CapAdd:       []string{"NET_ADMIN"},
+		Privileged:   true,
+		Sysctls:      sysctls,
+		ExtraHosts:   []string{fmt.Sprintf("peer0.org%d.example.com:%s", fabricPeerNode.Id, ipv4)},
 		PortBindings: portBindings,
 		Resources:    resourcesLimit,
 		//指定宿主机作为DNS服务器

@@ -1,0 +1,132 @@
+<------------------------------------->
+            enter ctl+c exit           
+<------------------------------------->
+start frr
+watchfrr[37]: [T83RR-8SM5G] watchfrr 8.1 starting: vty@0
+watchfrr[37]: [ZCJ3S-SPH5S] zebra state -> down : initial connection attempt failed
+watchfrr[37]: [ZCJ3S-SPH5S] bgpd state -> down : initial connection attempt failed
+watchfrr[37]: [ZCJ3S-SPH5S] ospfd state -> down : initial connection attempt failed
+watchfrr[37]: [ZCJ3S-SPH5S] ospf6d state -> down : initial connection attempt failed
+watchfrr[37]: [ZCJ3S-SPH5S] isisd state -> down : initial connection attempt failed
+watchfrr[37]: [ZCJ3S-SPH5S] staticd state -> down : initial connection attempt failed
+watchfrr[37]: [YFT0P-5Q5YX] Forked background command [pid 38]: /usr/lib/frr/watchfrr.sh restart all
+watchfrr[37]: [QDG3Y-BY5TN] bgpd state -> up : connect succeeded
+watchfrr[37]: [QDG3Y-BY5TN] zebra state -> up : connect succeeded
+watchfrr[37]: [YFT0P-5Q5YX] Forked background command [pid 74]: /usr/lib/frr/watchfrr.sh restart staticd
+watchfrr[37]: [YFT0P-5Q5YX] Forked background command [pid 82]: /usr/lib/frr/watchfrr.sh restart ospf6d
+watchfrr[37]: [QDG3Y-BY5TN] isisd state -> up : connect succeeded
+watchfrr[37]: [QDG3Y-BY5TN] ospfd state -> up : connect succeeded
+watchfrr[37]: [QDG3Y-BY5TN] staticd state -> up : connect succeeded
+watchfrr[37]: [QDG3Y-BY5TN] ospf6d state -> up : connect succeeded
+watchfrr[37]: [KWE5Q-QNGFC] all daemons up, doing startup-complete notify
+ * Started watchfrr
+
+[34m2025-03-19 09:14:12.435 UTC 0001 INFO[0m [localconfig] [34;1mcompleteInitialization[0m -> General.Cluster.ReplicationPolicy is ``, setting to `consensus`
+[34m2025-03-19 09:14:14.807 UTC 0002 INFO[0m [orderer.common.server] [34;1mprettyPrintStruct[0m -> Orderer config values:
+	General.ListenAddress = "0.0.0.0"
+	General.ListenPort = 7051
+	General.TLS.Enabled = true
+	General.TLS.PrivateKey = "/var/hyperledger/orderer/tls/server.key"
+	General.TLS.Certificate = "/var/hyperledger/orderer/tls/server.crt"
+	General.TLS.RootCAs = [/var/hyperledger/orderer/tls/ca.crt]
+	General.TLS.ClientAuthRequired = false
+	General.TLS.ClientRootCAs = []
+	General.TLS.TLSHandshakeTimeShift = 0s
+	General.Cluster.ListenAddress = ""
+	General.Cluster.ListenPort = 0
+	General.Cluster.ServerCertificate = ""
+	General.Cluster.ServerPrivateKey = ""
+	General.Cluster.ClientCertificate = "/var/hyperledger/orderer/tls/server.crt"
+	General.Cluster.ClientPrivateKey = "/var/hyperledger/orderer/tls/server.key"
+	General.Cluster.RootCAs = [/var/hyperledger/orderer/tls/ca.crt]
+	General.Cluster.DialTimeout = 5s
+	General.Cluster.RPCTimeout = 7s
+	General.Cluster.ReplicationBufferSize = 20971520
+	General.Cluster.ReplicationPullTimeout = 5s
+	General.Cluster.ReplicationRetryTimeout = 5s
+	General.Cluster.ReplicationMaxRetries = 12
+	General.Cluster.ReplicationPolicy = "consensus"
+	General.Cluster.SendBufferSize = 100
+	General.Cluster.CertExpirationWarningThreshold = 168h0m0s
+	General.Cluster.TLSHandshakeTimeShift = 0s
+	General.Keepalive.ServerMinInterval = 1m0s
+	General.Keepalive.ServerInterval = 2h0m0s
+	General.Keepalive.ServerTimeout = 20s
+	General.Backoff.BaseDelay = 1s
+	General.Backoff.Multiplier = 1.6
+	General.Backoff.MaxDelay = 2m0s
+	General.ConnectionTimeout = 0s
+	General.GenesisMethod = ""
+	General.GenesisFile = ""
+	General.BootstrapMethod = "none"
+	General.BootstrapFile = "/etc/hyperledger/fabric"
+	General.Profile.Enabled = false
+	General.Profile.Address = "0.0.0.0:6060"
+	General.LocalMSPDir = "/var/hyperledger/orderer/msp"
+	General.LocalMSPID = "OrdererMSP"
+	General.BCCSP.Default = "SW"
+	General.BCCSP.SW.Security = 256
+	General.BCCSP.SW.Hash = "SHA2"
+	General.BCCSP.SW.FileKeystore.KeyStorePath = ""
+	General.Authentication.TimeWindow = 15m0s
+	General.Authentication.NoExpirationChecks = false
+	General.MaxRecvMsgSize = 104857600
+	General.MaxSendMsgSize = 104857600
+	General.Throttling.Rate = 0
+	General.Throttling.InactivityTimeout = 5s
+	FileLedger.Location = "/var/hyperledger/production/orderer"
+	FileLedger.Prefix = ""
+	Debug.BroadcastTraceDir = ""
+	Debug.DeliverTraceDir = ""
+	Consensus = map[SnapDir:/var/hyperledger/production/orderer/etcdraft/snapshot WALDir:/var/hyperledger/production/orderer/etcdraft/wal]
+	Operations.ListenAddress = "orderer1.example.com:9051"
+	Operations.TLS.Enabled = false
+	Operations.TLS.PrivateKey = ""
+	Operations.TLS.Certificate = ""
+	Operations.TLS.RootCAs = []
+	Operations.TLS.ClientAuthRequired = false
+	Operations.TLS.ClientRootCAs = []
+	Operations.TLS.TLSHandshakeTimeShift = 0s
+	Metrics.Provider = "prometheus"
+	Metrics.Statsd.Network = "udp"
+	Metrics.Statsd.Address = "127.0.0.1:8125"
+	Metrics.Statsd.WriteInterval = 30s
+	Metrics.Statsd.Prefix = ""
+	ChannelParticipation.Enabled = true
+	ChannelParticipation.MaxRequestBodySize = 1048576
+	Admin.ListenAddress = "0.0.0.0:8051"
+	Admin.TLS.Enabled = true
+	Admin.TLS.PrivateKey = "/var/hyperledger/orderer/tls/server.key"
+	Admin.TLS.Certificate = "/var/hyperledger/orderer/tls/server.crt"
+	Admin.TLS.RootCAs = [/var/hyperledger/orderer/tls/ca.crt]
+	Admin.TLS.ClientAuthRequired = true
+	Admin.TLS.ClientRootCAs = [/var/hyperledger/orderer/tls/ca.crt]
+	Admin.TLS.TLSHandshakeTimeShift = 0s
+[34m2025-03-19 09:14:16.517 UTC 0003 INFO[0m [orderer.common.server] [34;1minitializeServerConfig[0m -> Starting orderer with TLS enabled
+[34m2025-03-19 09:14:16.929 UTC 0004 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Server #1]Server created
+[34m2025-03-19 09:14:17.810 UTC 0005 INFO[0m [blkstorage] [34;1mNewProvider[0m -> Creating new file ledger directory at /var/hyperledger/production/orderer/chains
+[34m2025-03-19 09:14:17.813 UTC 0006 INFO[0m [orderer.common.multichannel] [34;1mInitJoinBlockFileRepo[0m -> Channel Participation API enabled, registrar initializing with file repo /var/hyperledger/production/orderer/pendingops
+[34m2025-03-19 09:14:17.814 UTC 0007 INFO[0m [orderer.common.server] [34;1mMain[0m -> Starting without a system channel
+[34m2025-03-19 09:14:17.814 UTC 0008 INFO[0m [orderer.common.server] [34;1mMain[0m -> Setting up cluster
+[34m2025-03-19 09:14:17.814 UTC 0009 INFO[0m [orderer.common.server] [34;1mreuseListener[0m -> Cluster listener is not configured, defaulting to use the general listener on port 7051
+[34m2025-03-19 09:14:17.814 UTC 000a INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The enrollment certificate will expire on 2035-03-17 09:08:00 +0000 UTC
+[34m2025-03-19 09:14:17.814 UTC 000b INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The server TLS certificate will expire on 2035-03-17 09:08:00 +0000 UTC
+[34m2025-03-19 09:14:17.814 UTC 000c INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The client TLS certificate will expire on 2035-03-17 09:08:00 +0000 UTC
+[34m2025-03-19 09:14:17.906 UTC 000d INFO[0m [orderer.common.multichannel] [34;1mInitJoinBlockFileRepo[0m -> Channel Participation API enabled, registrar initializing with file repo /var/hyperledger/production/orderer/pendingops
+[34m2025-03-19 09:14:18.120 UTC 000e INFO[0m [orderer.consensus.smartbft] [34;1mNew[0m -> WAL Directory is /var/hyperledger/production/orderer/etcdraft/wal
+[34m2025-03-19 09:14:18.120 UTC 000f INFO[0m [orderer.common.multichannel] [34;1mstartChannels[0m -> Registrar initializing without a system channel, number of application channels: 0, with 0 consensus.Chain(s) and 0 follower.Chain(s)
+[34m2025-03-19 09:14:18.121 UTC 0010 INFO[0m [orderer.common.server] [34;1mMain[0m -> Starting orderer:
+ Version: 3.0.0
+ Commit SHA: 73c2273
+ Go version: go1.23.2
+ OS/Arch: linux/amd64
+[34m2025-03-19 09:14:18.121 UTC 0011 INFO[0m [orderer.common.server] [34;1mMain[0m -> Beginning to serve requests
+[34m2025-03-19 09:14:18.121 UTC 0012 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Server #1 ListenSocket #2]ListenSocket created
+watchfrr[37]: [RKHTV-CNGEG] Daemon: staticd: is in Up state but expected it to be in DAEMON_DOWN state
+watchfrr[37]: [RKHTV-CNGEG] Daemon: zebra: is in Up state but expected it to be in DAEMON_DOWN state
+watchfrr[37]: [RKHTV-CNGEG] Daemon: bgpd: is in Up state but expected it to be in DAEMON_DOWN state
+watchfrr[37]: [RKHTV-CNGEG] Daemon: ospfd: is in Up state but expected it to be in DAEMON_DOWN state
+watchfrr[37]: [RKHTV-CNGEG] Daemon: ospf6d: is in Up state but expected it to be in DAEMON_DOWN state
+watchfrr[37]: [RKHTV-CNGEG] Daemon: isisd: is in Up state but expected it to be in DAEMON_DOWN state
+watchfrr[37]: [RKHTV-CNGEG] Daemon: staticd: is in Up state but expected it to be in DAEMON_DOWN state
+watchfrr[37]: [RKHTV-CNGEG] Daemon: ospf6d: is in Up state but expected it to be in DAEMON_DOWN state

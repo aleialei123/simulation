@@ -1,0 +1,1046 @@
+<------------------------------------->
+            enter ctl+c exit           
+<------------------------------------->
+start frr
+watchfrr[37]: [T83RR-8SM5G] watchfrr 8.1 starting: vty@0
+watchfrr[37]: [ZCJ3S-SPH5S] zebra state -> down : initial connection attempt failed
+watchfrr[37]: [ZCJ3S-SPH5S] bgpd state -> down : initial connection attempt failed
+watchfrr[37]: [ZCJ3S-SPH5S] ospfd state -> down : initial connection attempt failed
+watchfrr[37]: [ZCJ3S-SPH5S] ospf6d state -> down : initial connection attempt failed
+watchfrr[37]: [ZCJ3S-SPH5S] isisd state -> down : initial connection attempt failed
+watchfrr[37]: [ZCJ3S-SPH5S] staticd state -> down : initial connection attempt failed
+watchfrr[37]: [YFT0P-5Q5YX] Forked background command [pid 38]: /usr/lib/frr/watchfrr.sh restart all
+watchfrr[37]: [QDG3Y-BY5TN] bgpd state -> up : connect succeeded
+watchfrr[37]: [QDG3Y-BY5TN] zebra state -> up : connect succeeded
+watchfrr[37]: [YFT0P-5Q5YX] Forked background command [pid 74]: /usr/lib/frr/watchfrr.sh restart staticd
+watchfrr[37]: [YFT0P-5Q5YX] Forked background command [pid 82]: /usr/lib/frr/watchfrr.sh restart ospf6d
+watchfrr[37]: [QDG3Y-BY5TN] isisd state -> up : connect succeeded
+watchfrr[37]: [QDG3Y-BY5TN] ospfd state -> up : connect succeeded
+watchfrr[37]: [QDG3Y-BY5TN] staticd state -> up : connect succeeded
+watchfrr[37]: [QDG3Y-BY5TN] ospf6d state -> up : connect succeeded
+watchfrr[37]: [KWE5Q-QNGFC] all daemons up, doing startup-complete notify
+ * Started watchfrr
+
+[34m2025-03-19 09:14:12.435 UTC 0001 INFO[0m [localconfig] [34;1mcompleteInitialization[0m -> General.Cluster.ReplicationPolicy is ``, setting to `consensus`
+[34m2025-03-19 09:14:14.807 UTC 0002 INFO[0m [orderer.common.server] [34;1mprettyPrintStruct[0m -> Orderer config values:
+	General.ListenAddress = "0.0.0.0"
+	General.ListenPort = 7051
+	General.TLS.Enabled = true
+	General.TLS.PrivateKey = "/var/hyperledger/orderer/tls/server.key"
+	General.TLS.Certificate = "/var/hyperledger/orderer/tls/server.crt"
+	General.TLS.RootCAs = [/var/hyperledger/orderer/tls/ca.crt]
+	General.TLS.ClientAuthRequired = false
+	General.TLS.ClientRootCAs = []
+	General.TLS.TLSHandshakeTimeShift = 0s
+	General.Cluster.ListenAddress = ""
+	General.Cluster.ListenPort = 0
+	General.Cluster.ServerCertificate = ""
+	General.Cluster.ServerPrivateKey = ""
+	General.Cluster.ClientCertificate = "/var/hyperledger/orderer/tls/server.crt"
+	General.Cluster.ClientPrivateKey = "/var/hyperledger/orderer/tls/server.key"
+	General.Cluster.RootCAs = [/var/hyperledger/orderer/tls/ca.crt]
+	General.Cluster.DialTimeout = 5s
+	General.Cluster.RPCTimeout = 7s
+	General.Cluster.ReplicationBufferSize = 20971520
+	General.Cluster.ReplicationPullTimeout = 5s
+	General.Cluster.ReplicationRetryTimeout = 5s
+	General.Cluster.ReplicationMaxRetries = 12
+	General.Cluster.ReplicationPolicy = "consensus"
+	General.Cluster.SendBufferSize = 100
+	General.Cluster.CertExpirationWarningThreshold = 168h0m0s
+	General.Cluster.TLSHandshakeTimeShift = 0s
+	General.Keepalive.ServerMinInterval = 1m0s
+	General.Keepalive.ServerInterval = 2h0m0s
+	General.Keepalive.ServerTimeout = 20s
+	General.Backoff.BaseDelay = 1s
+	General.Backoff.Multiplier = 1.6
+	General.Backoff.MaxDelay = 2m0s
+	General.ConnectionTimeout = 0s
+	General.GenesisMethod = ""
+	General.GenesisFile = ""
+	General.BootstrapMethod = "none"
+	General.BootstrapFile = "/etc/hyperledger/fabric"
+	General.Profile.Enabled = false
+	General.Profile.Address = "0.0.0.0:6060"
+	General.LocalMSPDir = "/var/hyperledger/orderer/msp"
+	General.LocalMSPID = "OrdererMSP"
+	General.BCCSP.Default = "SW"
+	General.BCCSP.SW.Security = 256
+	General.BCCSP.SW.Hash = "SHA2"
+	General.BCCSP.SW.FileKeystore.KeyStorePath = ""
+	General.Authentication.TimeWindow = 15m0s
+	General.Authentication.NoExpirationChecks = false
+	General.MaxRecvMsgSize = 104857600
+	General.MaxSendMsgSize = 104857600
+	General.Throttling.Rate = 0
+	General.Throttling.InactivityTimeout = 5s
+	FileLedger.Location = "/var/hyperledger/production/orderer"
+	FileLedger.Prefix = ""
+	Debug.BroadcastTraceDir = ""
+	Debug.DeliverTraceDir = ""
+	Consensus = map[SnapDir:/var/hyperledger/production/orderer/etcdraft/snapshot WALDir:/var/hyperledger/production/orderer/etcdraft/wal]
+	Operations.ListenAddress = "orderer1.example.com:9051"
+	Operations.TLS.Enabled = false
+	Operations.TLS.PrivateKey = ""
+	Operations.TLS.Certificate = ""
+	Operations.TLS.RootCAs = []
+	Operations.TLS.ClientAuthRequired = false
+	Operations.TLS.ClientRootCAs = []
+	Operations.TLS.TLSHandshakeTimeShift = 0s
+	Metrics.Provider = "prometheus"
+	Metrics.Statsd.Network = "udp"
+	Metrics.Statsd.Address = "127.0.0.1:8125"
+	Metrics.Statsd.WriteInterval = 30s
+	Metrics.Statsd.Prefix = ""
+	ChannelParticipation.Enabled = true
+	ChannelParticipation.MaxRequestBodySize = 1048576
+	Admin.ListenAddress = "0.0.0.0:8051"
+	Admin.TLS.Enabled = true
+	Admin.TLS.PrivateKey = "/var/hyperledger/orderer/tls/server.key"
+	Admin.TLS.Certificate = "/var/hyperledger/orderer/tls/server.crt"
+	Admin.TLS.RootCAs = [/var/hyperledger/orderer/tls/ca.crt]
+	Admin.TLS.ClientAuthRequired = true
+	Admin.TLS.ClientRootCAs = [/var/hyperledger/orderer/tls/ca.crt]
+	Admin.TLS.TLSHandshakeTimeShift = 0s
+[34m2025-03-19 09:14:16.517 UTC 0003 INFO[0m [orderer.common.server] [34;1minitializeServerConfig[0m -> Starting orderer with TLS enabled
+[34m2025-03-19 09:14:16.929 UTC 0004 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Server #1]Server created
+[34m2025-03-19 09:14:17.810 UTC 0005 INFO[0m [blkstorage] [34;1mNewProvider[0m -> Creating new file ledger directory at /var/hyperledger/production/orderer/chains
+[34m2025-03-19 09:14:17.813 UTC 0006 INFO[0m [orderer.common.multichannel] [34;1mInitJoinBlockFileRepo[0m -> Channel Participation API enabled, registrar initializing with file repo /var/hyperledger/production/orderer/pendingops
+[34m2025-03-19 09:14:17.814 UTC 0007 INFO[0m [orderer.common.server] [34;1mMain[0m -> Starting without a system channel
+[34m2025-03-19 09:14:17.814 UTC 0008 INFO[0m [orderer.common.server] [34;1mMain[0m -> Setting up cluster
+[34m2025-03-19 09:14:17.814 UTC 0009 INFO[0m [orderer.common.server] [34;1mreuseListener[0m -> Cluster listener is not configured, defaulting to use the general listener on port 7051
+[34m2025-03-19 09:14:17.814 UTC 000a INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The enrollment certificate will expire on 2035-03-17 09:08:00 +0000 UTC
+[34m2025-03-19 09:14:17.814 UTC 000b INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The server TLS certificate will expire on 2035-03-17 09:08:00 +0000 UTC
+[34m2025-03-19 09:14:17.814 UTC 000c INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The client TLS certificate will expire on 2035-03-17 09:08:00 +0000 UTC
+[34m2025-03-19 09:14:17.906 UTC 000d INFO[0m [orderer.common.multichannel] [34;1mInitJoinBlockFileRepo[0m -> Channel Participation API enabled, registrar initializing with file repo /var/hyperledger/production/orderer/pendingops
+[34m2025-03-19 09:14:18.120 UTC 000e INFO[0m [orderer.consensus.smartbft] [34;1mNew[0m -> WAL Directory is /var/hyperledger/production/orderer/etcdraft/wal
+[34m2025-03-19 09:14:18.120 UTC 000f INFO[0m [orderer.common.multichannel] [34;1mstartChannels[0m -> Registrar initializing without a system channel, number of application channels: 0, with 0 consensus.Chain(s) and 0 follower.Chain(s)
+[34m2025-03-19 09:14:18.121 UTC 0010 INFO[0m [orderer.common.server] [34;1mMain[0m -> Starting orderer:
+ Version: 3.0.0
+ Commit SHA: 73c2273
+ Go version: go1.23.2
+ OS/Arch: linux/amd64
+[34m2025-03-19 09:14:18.121 UTC 0011 INFO[0m [orderer.common.server] [34;1mMain[0m -> Beginning to serve requests
+[34m2025-03-19 09:14:18.121 UTC 0012 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Server #1 ListenSocket #2]ListenSocket created
+watchfrr[37]: [RKHTV-CNGEG] Daemon: staticd: is in Up state but expected it to be in DAEMON_DOWN state
+watchfrr[37]: [RKHTV-CNGEG] Daemon: zebra: is in Up state but expected it to be in DAEMON_DOWN state
+watchfrr[37]: [RKHTV-CNGEG] Daemon: bgpd: is in Up state but expected it to be in DAEMON_DOWN state
+watchfrr[37]: [RKHTV-CNGEG] Daemon: ospfd: is in Up state but expected it to be in DAEMON_DOWN state
+watchfrr[37]: [RKHTV-CNGEG] Daemon: ospf6d: is in Up state but expected it to be in DAEMON_DOWN state
+watchfrr[37]: [RKHTV-CNGEG] Daemon: isisd: is in Up state but expected it to be in DAEMON_DOWN state
+watchfrr[37]: [RKHTV-CNGEG] Daemon: staticd: is in Up state but expected it to be in DAEMON_DOWN state
+watchfrr[37]: [RKHTV-CNGEG] Daemon: ospf6d: is in Up state but expected it to be in DAEMON_DOWN state
+[34m2025-03-19 09:17:52.726 UTC 0013 INFO[0m [blkstorage] [34;1mnewBlockfileMgr[0m -> Getting block information from block storage
+[34m2025-03-19 09:17:52.730 UTC 0014 INFO[0m [orderer.consensus.smartbft] [34;1mHandleChain[0m -> Local consenter id is 1
+[34m2025-03-19 09:17:52.732 UTC 0015 INFO[0m [orderer.consensus.smartbft.chain] [34;1mRemoteNodesFromConfigBlock[0m -> mychannel 1 ---> -----BEGIN CERTIFICATE-----
+MIICHjCCAcWgAwIBAgIQU/QipR5TSVQkTmhYsG4+PDAKBggqhkjOPQQDAjBpMQsw
+CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+YW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xFzAVBgNVBAMTDmNhLmV4YW1w
+bGUuY29tMB4XDTI1MDMxOTA5MDgwMFoXDTM1MDMxNzA5MDgwMFowazELMAkGA1UE
+BhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lz
+Y28xEDAOBgNVBAsTB29yZGVyZXIxHTAbBgNVBAMTFG9yZGVyZXIxLmV4YW1wbGUu
+Y29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEMvtIMnFqAiO61E/6tQ1G9Njl
+SeUJx+BwXF2RPzL1g+Azjx58JoZCC2pEBxNd++rSHDCsPAsYPp1PWHB9MxPD76NN
+MEswDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgOgty
+wV7zpJLwo6VSRU8KmWh7c4ocIxV9ox49tFnUm4IwCgYIKoZIzj0EAwIDRwAwRAIg
+ZAHithzMJ6hk5/msAZntYpToONx20Dpulaa1jKDd3jkCIAOlRkaaa9QkA225kBIV
+3I5uLz0U9tbr7hiMDC3JRG8t
+-----END CERTIFICATE----- channel=mychannel
+[34m2025-03-19 09:17:52.732 UTC 0016 INFO[0m [orderer.consensus.smartbft.chain] [34;1mRemoteNodesFromConfigBlock[0m -> mychannel 2 ---> -----BEGIN CERTIFICATE-----
+MIICHjCCAcWgAwIBAgIQJaSyb2fyQ/fp52LFGtNaIjAKBggqhkjOPQQDAjBpMQsw
+CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+YW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xFzAVBgNVBAMTDmNhLmV4YW1w
+bGUuY29tMB4XDTI1MDMxOTA5MDgwMFoXDTM1MDMxNzA5MDgwMFowazELMAkGA1UE
+BhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lz
+Y28xEDAOBgNVBAsTB29yZGVyZXIxHTAbBgNVBAMTFG9yZGVyZXIyLmV4YW1wbGUu
+Y29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/HhEt0JU17nc6OiPNE4d1cxN
+GRcx/Oyulvn/6CNDAgPzLoH6DtJydXReL4AOpYVU8yf+MQrDbumS20hplr3H0KNN
+MEswDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgOgty
+wV7zpJLwo6VSRU8KmWh7c4ocIxV9ox49tFnUm4IwCgYIKoZIzj0EAwIDRwAwRAIg
+RcxR8XP9bWuck4SKPPu5bc5LVlU+g4VxQIyfapIynf0CIGsB6KE2sLaaZ69zXpfx
+TjNsIx3YEKbic4f6qjJgXKmF
+-----END CERTIFICATE----- channel=mychannel
+[34m2025-03-19 09:17:52.732 UTC 0017 INFO[0m [orderer.consensus.smartbft.chain] [34;1mRemoteNodesFromConfigBlock[0m -> mychannel 3 ---> -----BEGIN CERTIFICATE-----
+MIICIDCCAcagAwIBAgIRALy8Yae9gTG6pPHoOSRwlhMwCgYIKoZIzj0EAwIwaTEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRcwFQYDVQQDEw5jYS5leGFt
+cGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMGsxCzAJBgNV
+BAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJhbmNp
+c2NvMRAwDgYDVQQLEwdvcmRlcmVyMR0wGwYDVQQDExRvcmRlcmVyMy5leGFtcGxl
+LmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABHdA0seFXGyBigPQtzkT8j/Q
+46fPkk7bwhGH8wv5jX/Gv9KsoiYUsWXqvVsSsz/lxyGmX68ttHmJEflgykXPtwyj
+TTBLMA4GA1UdDwEB/wQEAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIDoL
+csFe86SS8KOlUkVPCploe3OKHCMVfaMePbRZ1JuCMAoGCCqGSM49BAMCA0gAMEUC
+IQDUAtS7icz0tJ0ISHZDzQhQsM+MXrkiRACgCEZUwBiOUwIgBuvpfaqTTBai+dk8
+NQBNz1MfQnMMD5JILLJ4RBobXSA=
+-----END CERTIFICATE----- channel=mychannel
+[34m2025-03-19 09:17:52.733 UTC 0018 INFO[0m [orderer.consensus.smartbft.chain] [34;1mRemoteNodesFromConfigBlock[0m -> mychannel 4 ---> -----BEGIN CERTIFICATE-----
+MIICHjCCAcWgAwIBAgIQb2iQ6TCtjk3VpIjkqTYJTzAKBggqhkjOPQQDAjBpMQsw
+CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+YW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xFzAVBgNVBAMTDmNhLmV4YW1w
+bGUuY29tMB4XDTI1MDMxOTA5MDgwMFoXDTM1MDMxNzA5MDgwMFowazELMAkGA1UE
+BhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lz
+Y28xEDAOBgNVBAsTB29yZGVyZXIxHTAbBgNVBAMTFG9yZGVyZXI0LmV4YW1wbGUu
+Y29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE3F7dMxIN9KGjE6UVEwnz5Ot+
+X1AEw0V9QKMx/DxNvEP6+dnIuH4DKEtELKnaTTtCSy1ChBzno+P5x70DJ6oyVqNN
+MEswDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgOgty
+wV7zpJLwo6VSRU8KmWh7c4ocIxV9ox49tFnUm4IwCgYIKoZIzj0EAwIDRwAwRAIg
+Abs/fLRI1SyNAINngvuUCaBN4UeDLZpBN40m6dGKUAwCIDso6FVb4FR83ny0C01A
+6BwkP70EmJzdZMqK8EJ0NdKJ
+-----END CERTIFICATE----- channel=mychannel
+[34m2025-03-19 09:17:52.736 UTC 0019 INFO[0m [orderer.consensus.smartbft.chain] [34;1mRemoteNodesFromConfigBlock[0m -> mychannel 1 ---> -----BEGIN CERTIFICATE-----
+MIICHjCCAcWgAwIBAgIQU/QipR5TSVQkTmhYsG4+PDAKBggqhkjOPQQDAjBpMQsw
+CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+YW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xFzAVBgNVBAMTDmNhLmV4YW1w
+bGUuY29tMB4XDTI1MDMxOTA5MDgwMFoXDTM1MDMxNzA5MDgwMFowazELMAkGA1UE
+BhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lz
+Y28xEDAOBgNVBAsTB29yZGVyZXIxHTAbBgNVBAMTFG9yZGVyZXIxLmV4YW1wbGUu
+Y29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEMvtIMnFqAiO61E/6tQ1G9Njl
+SeUJx+BwXF2RPzL1g+Azjx58JoZCC2pEBxNd++rSHDCsPAsYPp1PWHB9MxPD76NN
+MEswDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgOgty
+wV7zpJLwo6VSRU8KmWh7c4ocIxV9ox49tFnUm4IwCgYIKoZIzj0EAwIDRwAwRAIg
+ZAHithzMJ6hk5/msAZntYpToONx20Dpulaa1jKDd3jkCIAOlRkaaa9QkA225kBIV
+3I5uLz0U9tbr7hiMDC3JRG8t
+-----END CERTIFICATE----- channel=mychannel
+[34m2025-03-19 09:17:52.736 UTC 001a INFO[0m [orderer.consensus.smartbft.chain] [34;1mRemoteNodesFromConfigBlock[0m -> mychannel 2 ---> -----BEGIN CERTIFICATE-----
+MIICHjCCAcWgAwIBAgIQJaSyb2fyQ/fp52LFGtNaIjAKBggqhkjOPQQDAjBpMQsw
+CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+YW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xFzAVBgNVBAMTDmNhLmV4YW1w
+bGUuY29tMB4XDTI1MDMxOTA5MDgwMFoXDTM1MDMxNzA5MDgwMFowazELMAkGA1UE
+BhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lz
+Y28xEDAOBgNVBAsTB29yZGVyZXIxHTAbBgNVBAMTFG9yZGVyZXIyLmV4YW1wbGUu
+Y29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/HhEt0JU17nc6OiPNE4d1cxN
+GRcx/Oyulvn/6CNDAgPzLoH6DtJydXReL4AOpYVU8yf+MQrDbumS20hplr3H0KNN
+MEswDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgOgty
+wV7zpJLwo6VSRU8KmWh7c4ocIxV9ox49tFnUm4IwCgYIKoZIzj0EAwIDRwAwRAIg
+RcxR8XP9bWuck4SKPPu5bc5LVlU+g4VxQIyfapIynf0CIGsB6KE2sLaaZ69zXpfx
+TjNsIx3YEKbic4f6qjJgXKmF
+-----END CERTIFICATE----- channel=mychannel
+[34m2025-03-19 09:17:52.736 UTC 001b INFO[0m [orderer.consensus.smartbft.chain] [34;1mRemoteNodesFromConfigBlock[0m -> mychannel 3 ---> -----BEGIN CERTIFICATE-----
+MIICIDCCAcagAwIBAgIRALy8Yae9gTG6pPHoOSRwlhMwCgYIKoZIzj0EAwIwaTEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRcwFQYDVQQDEw5jYS5leGFt
+cGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMGsxCzAJBgNV
+BAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJhbmNp
+c2NvMRAwDgYDVQQLEwdvcmRlcmVyMR0wGwYDVQQDExRvcmRlcmVyMy5leGFtcGxl
+LmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABHdA0seFXGyBigPQtzkT8j/Q
+46fPkk7bwhGH8wv5jX/Gv9KsoiYUsWXqvVsSsz/lxyGmX68ttHmJEflgykXPtwyj
+TTBLMA4GA1UdDwEB/wQEAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIDoL
+csFe86SS8KOlUkVPCploe3OKHCMVfaMePbRZ1JuCMAoGCCqGSM49BAMCA0gAMEUC
+IQDUAtS7icz0tJ0ISHZDzQhQsM+MXrkiRACgCEZUwBiOUwIgBuvpfaqTTBai+dk8
+NQBNz1MfQnMMD5JILLJ4RBobXSA=
+-----END CERTIFICATE----- channel=mychannel
+[34m2025-03-19 09:17:52.736 UTC 001c INFO[0m [orderer.consensus.smartbft.chain] [34;1mRemoteNodesFromConfigBlock[0m -> mychannel 4 ---> -----BEGIN CERTIFICATE-----
+MIICHjCCAcWgAwIBAgIQb2iQ6TCtjk3VpIjkqTYJTzAKBggqhkjOPQQDAjBpMQsw
+CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+YW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xFzAVBgNVBAMTDmNhLmV4YW1w
+bGUuY29tMB4XDTI1MDMxOTA5MDgwMFoXDTM1MDMxNzA5MDgwMFowazELMAkGA1UE
+BhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lz
+Y28xEDAOBgNVBAsTB29yZGVyZXIxHTAbBgNVBAMTFG9yZGVyZXI0LmV4YW1wbGUu
+Y29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE3F7dMxIN9KGjE6UVEwnz5Ot+
+X1AEw0V9QKMx/DxNvEP6+dnIuH4DKEtELKnaTTtCSy1ChBzno+P5x70DJ6oyVqNN
+MEswDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgOgty
+wV7zpJLwo6VSRU8KmWh7c4ocIxV9ox49tFnUm4IwCgYIKoZIzj0EAwIDRwAwRAIg
+Abs/fLRI1SyNAINngvuUCaBN4UeDLZpBN40m6dGKUAwCIDso6FVb4FR83ny0C01A
+6BwkP70EmJzdZMqK8EJ0NdKJ
+-----END CERTIFICATE----- channel=mychannel
+[34m2025-03-19 09:17:52.738 UTC 001d INFO[0m [orderer.consensus.smartbft.chain] [34;1mbftSmartConsensusBuild[0m -> Initializing a WAL for chain mychannel, on dir: /var/hyperledger/production/orderer/etcdraft/wal/mychannel channel=mychannel
+[34m2025-03-19 09:17:52.738 UTC 001e INFO[0m [orderer.consensus.smartbft.chain] [34;1mInitializeAndReadAll[0m -> Trying to creating a Write-Ahead-Log at dir: /var/hyperledger/production/orderer/etcdraft/wal/mychannel channel=mychannel
+[34m2025-03-19 09:17:52.739 UTC 001f INFO[0m [orderer.consensus.smartbft.chain] [34;1mCreate[0m -> Write-Ahead-Log created successfully, mode: WRITE, dir: /var/hyperledger/production/orderer/etcdraft/wal/mychannel channel=mychannel
+[34m2025-03-19 09:17:52.745 UTC 0020 INFO[0m [orderer.consensus.smartbft.chain] [34;1mInitializeAndReadAll[0m -> Write-Ahead-Log initialized successfully, initial state contains 0 entries channel=mychannel
+[34m2025-03-19 09:17:52.746 UTC 0021 INFO[0m [orderer.common.cluster] [34;1mConfigure[0m -> Configuring communication module for Channel: mychannel with nodes:[ID: 1,
+Endpoint: orderer1.example.com:7051,
+ServerTLSCert:-----BEGIN CERTIFICATE-----
+MIICaDCCAg6gAwIBAgIRAJ/t5RheXN6dHjVthGoF9vUwCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMS5leGFtcGxlLmNvbTBZMBMGByqGSM49
+AgEGCCqGSM49AwEHA0IABADWLzjrgLm9gV0WwoX+eLCB+76ECyr20CEoO+2NrpV0
+q9OsndwAFiQ1KsO+VcIkSG81RSuCr5Q0+pxiN89qlxmjgaMwgaAwDgYDVR0PAQH/
+BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
+AjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo
+MDQGA1UdEQQtMCuCFG9yZGVyZXIxLmV4YW1wbGUuY29tgghvcmRlcmVyMYIJbG9j
+YWxob3N0MAoGCCqGSM49BAMCA0gAMEUCIQD8q2u3aO39xPCCAJ0W+KLhFSx6x2xp
+Tqp7H/2GWDB2LgIgfEqt+n9HSjqnVfcCuXnZJ1UN2H0/Rpa60T320M/so90=
+-----END CERTIFICATE-----
+,
+ClientTLSCert:-----BEGIN CERTIFICATE-----
+MIICaDCCAg6gAwIBAgIRAJ/t5RheXN6dHjVthGoF9vUwCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMS5leGFtcGxlLmNvbTBZMBMGByqGSM49
+AgEGCCqGSM49AwEHA0IABADWLzjrgLm9gV0WwoX+eLCB+76ECyr20CEoO+2NrpV0
+q9OsndwAFiQ1KsO+VcIkSG81RSuCr5Q0+pxiN89qlxmjgaMwgaAwDgYDVR0PAQH/
+BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
+AjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo
+MDQGA1UdEQQtMCuCFG9yZGVyZXIxLmV4YW1wbGUuY29tgghvcmRlcmVyMYIJbG9j
+YWxob3N0MAoGCCqGSM49BAMCA0gAMEUCIQD8q2u3aO39xPCCAJ0W+KLhFSx6x2xp
+Tqp7H/2GWDB2LgIgfEqt+n9HSjqnVfcCuXnZJ1UN2H0/Rpa60T320M/so90=
+-----END CERTIFICATE-----
+, ServerRootCA: [-----BEGIN CERTIFICATE-----
+MIICRDCCAeqgAwIBAgIRAMh+TEXdYll154DKo30yg78wCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMGwxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMRQwEgYDVQQKEwtleGFtcGxlLmNvbTEaMBgGA1UEAxMRdGxzY2EuZXhh
+bXBsZS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATfE74lWGwiIxmc5i4Z
+kpVq3Yab//rrkyCgbQEV9Pkxrj+cCZpJGbx/xdz3P+9r/ZETcBU4LVjPzNeYZWeE
+q5xNo20wazAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsG
+AQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEIB5OqdjoyWBxOWgGbaaO
+plCFYbBU5npZZy3xpWNgBVooMAoGCCqGSM49BAMCA0gAMEUCIQDmcscXvNZM/anX
+7A+9mOZijFsabL9XrgBHw407oSUrgQIgeiEkOB2ljvZnbzCwP0xL1boNrLaeiDus
+kgmIabO/2TE=
+-----END CERTIFICATE-----
+] ID: 2,
+Endpoint: orderer2.example.com:7052,
+ServerTLSCert:-----BEGIN CERTIFICATE-----
+MIICaDCCAg6gAwIBAgIRAIC4vkzc7CCcdmAft0wt8egwCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMi5leGFtcGxlLmNvbTBZMBMGByqGSM49
+AgEGCCqGSM49AwEHA0IABKjj8L5RysJk6JIcj2qcuTZoT+PZu6F4WyW0U715yLY0
+flhOCCQLqLBZphd0N6Dba9aDfSkr6J4k9wCZAkja9UqjgaMwgaAwDgYDVR0PAQH/
+BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
+AjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo
+MDQGA1UdEQQtMCuCFG9yZGVyZXIyLmV4YW1wbGUuY29tgghvcmRlcmVyMoIJbG9j
+YWxob3N0MAoGCCqGSM49BAMCA0gAMEUCIQDpa+zBeZnYRFRueZRbvUJMQJq5PQNY
+ow3xu6AU1xSyhAIgVwiz1NCEbGxFqZDC6GEaf5SYNnNNPX4Te5KOwHwpz3k=
+-----END CERTIFICATE-----
+,
+ClientTLSCert:-----BEGIN CERTIFICATE-----
+MIICaDCCAg6gAwIBAgIRAIC4vkzc7CCcdmAft0wt8egwCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMi5leGFtcGxlLmNvbTBZMBMGByqGSM49
+AgEGCCqGSM49AwEHA0IABKjj8L5RysJk6JIcj2qcuTZoT+PZu6F4WyW0U715yLY0
+flhOCCQLqLBZphd0N6Dba9aDfSkr6J4k9wCZAkja9UqjgaMwgaAwDgYDVR0PAQH/
+BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
+AjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo
+MDQGA1UdEQQtMCuCFG9yZGVyZXIyLmV4YW1wbGUuY29tgghvcmRlcmVyMoIJbG9j
+YWxob3N0MAoGCCqGSM49BAMCA0gAMEUCIQDpa+zBeZnYRFRueZRbvUJMQJq5PQNY
+ow3xu6AU1xSyhAIgVwiz1NCEbGxFqZDC6GEaf5SYNnNNPX4Te5KOwHwpz3k=
+-----END CERTIFICATE-----
+, ServerRootCA: [-----BEGIN CERTIFICATE-----
+MIICRDCCAeqgAwIBAgIRAMh+TEXdYll154DKo30yg78wCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMGwxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMRQwEgYDVQQKEwtleGFtcGxlLmNvbTEaMBgGA1UEAxMRdGxzY2EuZXhh
+bXBsZS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATfE74lWGwiIxmc5i4Z
+kpVq3Yab//rrkyCgbQEV9Pkxrj+cCZpJGbx/xdz3P+9r/ZETcBU4LVjPzNeYZWeE
+q5xNo20wazAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsG
+AQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEIB5OqdjoyWBxOWgGbaaO
+plCFYbBU5npZZy3xpWNgBVooMAoGCCqGSM49BAMCA0gAMEUCIQDmcscXvNZM/anX
+7A+9mOZijFsabL9XrgBHw407oSUrgQIgeiEkOB2ljvZnbzCwP0xL1boNrLaeiDus
+kgmIabO/2TE=
+-----END CERTIFICATE-----
+] ID: 3,
+Endpoint: orderer3.example.com:7053,
+ServerTLSCert:-----BEGIN CERTIFICATE-----
+MIICZzCCAg2gAwIBAgIQFC41kXqgfh+1JuxvltyjVzAKBggqhkjOPQQDAjBsMQsw
+CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+YW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xGjAYBgNVBAMTEXRsc2NhLmV4
+YW1wbGUuY29tMB4XDTI1MDMxOTA5MDgwMFoXDTM1MDMxNzA5MDgwMFowWTELMAkG
+A1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFu
+Y2lzY28xHTAbBgNVBAMTFG9yZGVyZXIzLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0C
+AQYIKoZIzj0DAQcDQgAE5V1bIv2dgS3zPGxkL61lfpqIcgxLCv8CQlv8TtHJdPjr
+mjyCjnOjaKiznHVknlxxOmfyhZA/xMTLDY7IZqHGv6OBozCBoDAOBgNVHQ8BAf8E
+BAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQC
+MAAwKwYDVR0jBCQwIoAgHk6p2OjJYHE5aAZtpo6mUIVhsFTmellnLfGlY2AFWigw
+NAYDVR0RBC0wK4IUb3JkZXJlcjMuZXhhbXBsZS5jb22CCG9yZGVyZXIzgglsb2Nh
+bGhvc3QwCgYIKoZIzj0EAwIDSAAwRQIhAIBrgMVuLkOzl7K3UqOt0C9/LKCu56rz
+gp3gkN5OyktNAiBYaXTNgohkdxJWBPXnr0m++qcbbMi9sbEXS3HbWuE/UA==
+-----END CERTIFICATE-----
+,
+ClientTLSCert:-----BEGIN CERTIFICATE-----
+MIICZzCCAg2gAwIBAgIQFC41kXqgfh+1JuxvltyjVzAKBggqhkjOPQQDAjBsMQsw
+CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+YW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xGjAYBgNVBAMTEXRsc2NhLmV4
+YW1wbGUuY29tMB4XDTI1MDMxOTA5MDgwMFoXDTM1MDMxNzA5MDgwMFowWTELMAkG
+A1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFu
+Y2lzY28xHTAbBgNVBAMTFG9yZGVyZXIzLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0C
+AQYIKoZIzj0DAQcDQgAE5V1bIv2dgS3zPGxkL61lfpqIcgxLCv8CQlv8TtHJdPjr
+mjyCjnOjaKiznHVknlxxOmfyhZA/xMTLDY7IZqHGv6OBozCBoDAOBgNVHQ8BAf8E
+BAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQC
+MAAwKwYDVR0jBCQwIoAgHk6p2OjJYHE5aAZtpo6mUIVhsFTmellnLfGlY2AFWigw
+NAYDVR0RBC0wK4IUb3JkZXJlcjMuZXhhbXBsZS5jb22CCG9yZGVyZXIzgglsb2Nh
+bGhvc3QwCgYIKoZIzj0EAwIDSAAwRQIhAIBrgMVuLkOzl7K3UqOt0C9/LKCu56rz
+gp3gkN5OyktNAiBYaXTNgohkdxJWBPXnr0m++qcbbMi9sbEXS3HbWuE/UA==
+-----END CERTIFICATE-----
+, ServerRootCA: [-----BEGIN CERTIFICATE-----
+MIICRDCCAeqgAwIBAgIRAMh+TEXdYll154DKo30yg78wCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMGwxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMRQwEgYDVQQKEwtleGFtcGxlLmNvbTEaMBgGA1UEAxMRdGxzY2EuZXhh
+bXBsZS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATfE74lWGwiIxmc5i4Z
+kpVq3Yab//rrkyCgbQEV9Pkxrj+cCZpJGbx/xdz3P+9r/ZETcBU4LVjPzNeYZWeE
+q5xNo20wazAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsG
+AQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEIB5OqdjoyWBxOWgGbaaO
+plCFYbBU5npZZy3xpWNgBVooMAoGCCqGSM49BAMCA0gAMEUCIQDmcscXvNZM/anX
+7A+9mOZijFsabL9XrgBHw407oSUrgQIgeiEkOB2ljvZnbzCwP0xL1boNrLaeiDus
+kgmIabO/2TE=
+-----END CERTIFICATE-----
+] ID: 4,
+Endpoint: orderer4.example.com:7054,
+ServerTLSCert:-----BEGIN CERTIFICATE-----
+MIICZzCCAg6gAwIBAgIRAIPdcFBsXuWo+8NfRa+z+WYwCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyNC5leGFtcGxlLmNvbTBZMBMGByqGSM49
+AgEGCCqGSM49AwEHA0IABBM4BgeChxQIujye8a6TUWNgLYUpRAipG0L1MD9SaUW3
++DVZUarIU5TLQs5qFoVyIphckouGi/Gh7UsPeLtSITWjgaMwgaAwDgYDVR0PAQH/
+BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
+AjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo
+MDQGA1UdEQQtMCuCFG9yZGVyZXI0LmV4YW1wbGUuY29tgghvcmRlcmVyNIIJbG9j
+YWxob3N0MAoGCCqGSM49BAMCA0cAMEQCICfdncFX6QPvHROcPFvNgbvxANfmSTmG
+JR0okJOMH8nbAiB0LKEHFinrlSMpiZGih5tbVLOI1Ev3sCKNEuM3i5cfYA==
+-----END CERTIFICATE-----
+,
+ClientTLSCert:-----BEGIN CERTIFICATE-----
+MIICZzCCAg6gAwIBAgIRAIPdcFBsXuWo+8NfRa+z+WYwCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyNC5leGFtcGxlLmNvbTBZMBMGByqGSM49
+AgEGCCqGSM49AwEHA0IABBM4BgeChxQIujye8a6TUWNgLYUpRAipG0L1MD9SaUW3
++DVZUarIU5TLQs5qFoVyIphckouGi/Gh7UsPeLtSITWjgaMwgaAwDgYDVR0PAQH/
+BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
+AjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo
+MDQGA1UdEQQtMCuCFG9yZGVyZXI0LmV4YW1wbGUuY29tgghvcmRlcmVyNIIJbG9j
+YWxob3N0MAoGCCqGSM49BAMCA0cAMEQCICfdncFX6QPvHROcPFvNgbvxANfmSTmG
+JR0okJOMH8nbAiB0LKEHFinrlSMpiZGih5tbVLOI1Ev3sCKNEuM3i5cfYA==
+-----END CERTIFICATE-----
+, ServerRootCA: [-----BEGIN CERTIFICATE-----
+MIICRDCCAeqgAwIBAgIRAMh+TEXdYll154DKo30yg78wCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMGwxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMRQwEgYDVQQKEwtleGFtcGxlLmNvbTEaMBgGA1UEAxMRdGxzY2EuZXhh
+bXBsZS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATfE74lWGwiIxmc5i4Z
+kpVq3Yab//rrkyCgbQEV9Pkxrj+cCZpJGbx/xdz3P+9r/ZETcBU4LVjPzNeYZWeE
+q5xNo20wazAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsG
+AQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEIB5OqdjoyWBxOWgGbaaO
+plCFYbBU5npZZy3xpWNgBVooMAoGCCqGSM49BAMCA0gAMEUCIQDmcscXvNZM/anX
+7A+9mOZijFsabL9XrgBHw407oSUrgQIgeiEkOB2ljvZnbzCwP0xL1boNrLaeiDus
+kgmIabO/2TE=
+-----END CERTIFICATE-----
+]]
+[34m2025-03-19 09:17:52.746 UTC 0022 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Allocating a new stub for node 1 with endpoint orderer1.example.com:7051 for channel mychannel
+[34m2025-03-19 09:17:52.746 UTC 0023 INFO[0m [grpc] [34;1mInfof[0m -> [core] original dial target is: "orderer1.example.com:7051"
+[34m2025-03-19 09:17:52.746 UTC 0024 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #3]Channel created
+[34m2025-03-19 09:17:52.746 UTC 0025 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #3]parsed dial target is: resolver.Target{URL:url.URL{Scheme:"passthrough", Opaque:"", User:(*url.Userinfo)(nil), Host:"", Path:"/orderer1.example.com:7051", RawPath:"", OmitHost:false, ForceQuery:false, RawQuery:"", Fragment:"", RawFragment:""}}
+[34m2025-03-19 09:17:52.746 UTC 0026 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #3]Channel authority set to "orderer1.example.com:7051"
+[34m2025-03-19 09:17:52.746 UTC 0027 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #3]Resolver state updated: {
+  "Addresses": [
+    {
+      "Addr": "orderer1.example.com:7051",
+      "ServerName": "",
+      "Attributes": null,
+      "BalancerAttributes": null,
+      "Metadata": null
+    }
+  ],
+  "Endpoints": [
+    {
+      "Addresses": [
+        {
+          "Addr": "orderer1.example.com:7051",
+          "ServerName": "",
+          "Attributes": null,
+          "BalancerAttributes": null,
+          "Metadata": null
+        }
+      ],
+      "Attributes": null
+    }
+  ],
+  "ServiceConfig": null,
+  "Attributes": null
+} (resolver returned new addresses)
+[34m2025-03-19 09:17:52.746 UTC 0028 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #3]Channel switches to new LB policy "pick_first"
+[34m2025-03-19 09:17:52.746 UTC 0029 INFO[0m [grpc] [34;1mInfof[0m -> [pick-first-lb] [pick-first-lb 0xc000bbb980] Received new config {
+  "shuffleAddressList": false
+}, resolver state {
+  "Addresses": [
+    {
+      "Addr": "orderer1.example.com:7051",
+      "ServerName": "",
+      "Attributes": null,
+      "BalancerAttributes": null,
+      "Metadata": null
+    }
+  ],
+  "Endpoints": [
+    {
+      "Addresses": [
+        {
+          "Addr": "orderer1.example.com:7051",
+          "ServerName": "",
+          "Attributes": null,
+          "BalancerAttributes": null,
+          "Metadata": null
+        }
+      ],
+      "Attributes": null
+    }
+  ],
+  "ServiceConfig": null,
+  "Attributes": null
+}
+[34m2025-03-19 09:17:52.747 UTC 002a INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #3 SubChannel #4]Subchannel created
+[34m2025-03-19 09:17:52.747 UTC 002b INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #3]Channel Connectivity change to CONNECTING
+[34m2025-03-19 09:17:52.747 UTC 002c INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #3]Channel exiting idle mode
+[34m2025-03-19 09:17:52.747 UTC 002d INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Allocating a new stub for node 2 with endpoint orderer2.example.com:7052 for channel mychannel
+[34m2025-03-19 09:17:52.747 UTC 002e INFO[0m [grpc] [34;1mInfof[0m -> [core] original dial target is: "orderer2.example.com:7052"
+[34m2025-03-19 09:17:52.747 UTC 002f INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #3 SubChannel #4]Subchannel Connectivity change to CONNECTING
+[34m2025-03-19 09:17:52.747 UTC 0030 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #5]Channel created
+[34m2025-03-19 09:17:52.747 UTC 0031 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #5]parsed dial target is: resolver.Target{URL:url.URL{Scheme:"passthrough", Opaque:"", User:(*url.Userinfo)(nil), Host:"", Path:"/orderer2.example.com:7052", RawPath:"", OmitHost:false, ForceQuery:false, RawQuery:"", Fragment:"", RawFragment:""}}
+[34m2025-03-19 09:17:52.747 UTC 0032 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #3 SubChannel #4]Subchannel picks a new address "orderer1.example.com:7051" to connect
+[34m2025-03-19 09:17:52.747 UTC 0034 INFO[0m [grpc] [34;1mInfof[0m -> [pick-first-lb] [pick-first-lb 0xc000bbb980] Received SubConn state update: 0xc000bbbad0, {ConnectivityState:CONNECTING ConnectionError:<nil> connectedAddress:{Addr: ServerName: Attributes:<nil> BalancerAttributes:<nil> Metadata:<nil>}}
+[34m2025-03-19 09:17:52.747 UTC 0033 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #5]Channel authority set to "orderer2.example.com:7052"
+[34m2025-03-19 09:17:52.748 UTC 0035 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #5]Resolver state updated: {
+  "Addresses": [
+    {
+      "Addr": "orderer2.example.com:7052",
+      "ServerName": "",
+      "Attributes": null,
+      "BalancerAttributes": null,
+      "Metadata": null
+    }
+  ],
+  "Endpoints": [
+    {
+      "Addresses": [
+        {
+          "Addr": "orderer2.example.com:7052",
+          "ServerName": "",
+          "Attributes": null,
+          "BalancerAttributes": null,
+          "Metadata": null
+        }
+      ],
+      "Attributes": null
+    }
+  ],
+  "ServiceConfig": null,
+  "Attributes": null
+} (resolver returned new addresses)
+[34m2025-03-19 09:17:52.748 UTC 0036 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #5]Channel switches to new LB policy "pick_first"
+[34m2025-03-19 09:17:52.748 UTC 0037 INFO[0m [grpc] [34;1mInfof[0m -> [pick-first-lb] [pick-first-lb 0xc000c1e810] Received new config {
+  "shuffleAddressList": false
+}, resolver state {
+  "Addresses": [
+    {
+      "Addr": "orderer2.example.com:7052",
+      "ServerName": "",
+      "Attributes": null,
+      "BalancerAttributes": null,
+      "Metadata": null
+    }
+  ],
+  "Endpoints": [
+    {
+      "Addresses": [
+        {
+          "Addr": "orderer2.example.com:7052",
+          "ServerName": "",
+          "Attributes": null,
+          "BalancerAttributes": null,
+          "Metadata": null
+        }
+      ],
+      "Attributes": null
+    }
+  ],
+  "ServiceConfig": null,
+  "Attributes": null
+}
+[34m2025-03-19 09:17:52.748 UTC 0038 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #5 SubChannel #6]Subchannel created
+[34m2025-03-19 09:17:52.748 UTC 0039 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #5]Channel Connectivity change to CONNECTING
+[34m2025-03-19 09:17:52.748 UTC 003a INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #5]Channel exiting idle mode
+[34m2025-03-19 09:17:52.748 UTC 003b INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Allocating a new stub for node 3 with endpoint orderer3.example.com:7053 for channel mychannel
+[34m2025-03-19 09:17:52.748 UTC 003c INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #5 SubChannel #6]Subchannel Connectivity change to CONNECTING
+[34m2025-03-19 09:17:52.749 UTC 003d INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #5 SubChannel #6]Subchannel picks a new address "orderer2.example.com:7052" to connect
+[34m2025-03-19 09:17:52.749 UTC 003e INFO[0m [grpc] [34;1mInfof[0m -> [core] original dial target is: "orderer3.example.com:7053"
+[34m2025-03-19 09:17:52.749 UTC 003f INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #7]Channel created
+[34m2025-03-19 09:17:52.749 UTC 0040 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #7]parsed dial target is: resolver.Target{URL:url.URL{Scheme:"passthrough", Opaque:"", User:(*url.Userinfo)(nil), Host:"", Path:"/orderer3.example.com:7053", RawPath:"", OmitHost:false, ForceQuery:false, RawQuery:"", Fragment:"", RawFragment:""}}
+[34m2025-03-19 09:17:52.749 UTC 0041 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #7]Channel authority set to "orderer3.example.com:7053"
+[34m2025-03-19 09:17:52.749 UTC 0042 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #7]Resolver state updated: {
+  "Addresses": [
+    {
+      "Addr": "orderer3.example.com:7053",
+      "ServerName": "",
+      "Attributes": null,
+      "BalancerAttributes": null,
+      "Metadata": null
+    }
+  ],
+  "Endpoints": [
+    {
+      "Addresses": [
+        {
+          "Addr": "orderer3.example.com:7053",
+          "ServerName": "",
+          "Attributes": null,
+          "BalancerAttributes": null,
+          "Metadata": null
+        }
+      ],
+      "Attributes": null
+    }
+  ],
+  "ServiceConfig": null,
+  "Attributes": null
+} (resolver returned new addresses)
+[34m2025-03-19 09:17:52.749 UTC 0043 INFO[0m [grpc] [34;1mInfof[0m -> [pick-first-lb] [pick-first-lb 0xc000c1e810] Received SubConn state update: 0xc000e84150, {ConnectivityState:CONNECTING ConnectionError:<nil> connectedAddress:{Addr: ServerName: Attributes:<nil> BalancerAttributes:<nil> Metadata:<nil>}}
+[34m2025-03-19 09:17:52.749 UTC 0044 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #7]Channel switches to new LB policy "pick_first"
+[34m2025-03-19 09:17:52.749 UTC 0045 INFO[0m [grpc] [34;1mInfof[0m -> [pick-first-lb] [pick-first-lb 0xc000e84ed0] Received new config {
+  "shuffleAddressList": false
+}, resolver state {
+  "Addresses": [
+    {
+      "Addr": "orderer3.example.com:7053",
+      "ServerName": "",
+      "Attributes": null,
+      "BalancerAttributes": null,
+      "Metadata": null
+    }
+  ],
+  "Endpoints": [
+    {
+      "Addresses": [
+        {
+          "Addr": "orderer3.example.com:7053",
+          "ServerName": "",
+          "Attributes": null,
+          "BalancerAttributes": null,
+          "Metadata": null
+        }
+      ],
+      "Attributes": null
+    }
+  ],
+  "ServiceConfig": null,
+  "Attributes": null
+}
+[34m2025-03-19 09:17:52.749 UTC 0046 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #7 SubChannel #8]Subchannel created
+[34m2025-03-19 09:17:52.749 UTC 0047 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #7]Channel Connectivity change to CONNECTING
+[34m2025-03-19 09:17:52.749 UTC 0048 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #7]Channel exiting idle mode
+[34m2025-03-19 09:17:52.749 UTC 0049 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Allocating a new stub for node 4 with endpoint orderer4.example.com:7054 for channel mychannel
+[34m2025-03-19 09:17:52.749 UTC 004a INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #7 SubChannel #8]Subchannel Connectivity change to CONNECTING
+[34m2025-03-19 09:17:52.749 UTC 004b INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #7 SubChannel #8]Subchannel picks a new address "orderer3.example.com:7053" to connect
+[34m2025-03-19 09:17:52.749 UTC 004c INFO[0m [grpc] [34;1mInfof[0m -> [pick-first-lb] [pick-first-lb 0xc000e84ed0] Received SubConn state update: 0xc000e84ff0, {ConnectivityState:CONNECTING ConnectionError:<nil> connectedAddress:{Addr: ServerName: Attributes:<nil> BalancerAttributes:<nil> Metadata:<nil>}}
+[34m2025-03-19 09:17:52.749 UTC 004d INFO[0m [grpc] [34;1mInfof[0m -> [core] original dial target is: "orderer4.example.com:7054"
+[34m2025-03-19 09:17:52.749 UTC 004e INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #9]Channel created
+[34m2025-03-19 09:17:52.749 UTC 004f INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #9]parsed dial target is: resolver.Target{URL:url.URL{Scheme:"passthrough", Opaque:"", User:(*url.Userinfo)(nil), Host:"", Path:"/orderer4.example.com:7054", RawPath:"", OmitHost:false, ForceQuery:false, RawQuery:"", Fragment:"", RawFragment:""}}
+[34m2025-03-19 09:17:52.749 UTC 0050 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #9]Channel authority set to "orderer4.example.com:7054"
+[34m2025-03-19 09:17:52.750 UTC 0051 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #9]Resolver state updated: {
+  "Addresses": [
+    {
+      "Addr": "orderer4.example.com:7054",
+      "ServerName": "",
+      "Attributes": null,
+      "BalancerAttributes": null,
+      "Metadata": null
+    }
+  ],
+  "Endpoints": [
+    {
+      "Addresses": [
+        {
+          "Addr": "orderer4.example.com:7054",
+          "ServerName": "",
+          "Attributes": null,
+          "BalancerAttributes": null,
+          "Metadata": null
+        }
+      ],
+      "Attributes": null
+    }
+  ],
+  "ServiceConfig": null,
+  "Attributes": null
+} (resolver returned new addresses)
+[34m2025-03-19 09:17:52.750 UTC 0052 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #9]Channel switches to new LB policy "pick_first"
+[34m2025-03-19 09:17:52.750 UTC 0053 INFO[0m [grpc] [34;1mInfof[0m -> [pick-first-lb] [pick-first-lb 0xc000e85d10] Received new config {
+  "shuffleAddressList": false
+}, resolver state {
+  "Addresses": [
+    {
+      "Addr": "orderer4.example.com:7054",
+      "ServerName": "",
+      "Attributes": null,
+      "BalancerAttributes": null,
+      "Metadata": null
+    }
+  ],
+  "Endpoints": [
+    {
+      "Addresses": [
+        {
+          "Addr": "orderer4.example.com:7054",
+          "ServerName": "",
+          "Attributes": null,
+          "BalancerAttributes": null,
+          "Metadata": null
+        }
+      ],
+      "Attributes": null
+    }
+  ],
+  "ServiceConfig": null,
+  "Attributes": null
+}
+[34m2025-03-19 09:17:52.750 UTC 0054 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #9 SubChannel #10]Subchannel created
+[34m2025-03-19 09:17:52.750 UTC 0055 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #9]Channel Connectivity change to CONNECTING
+[34m2025-03-19 09:17:52.750 UTC 0056 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #9]Channel exiting idle mode
+[34m2025-03-19 09:17:52.750 UTC 0057 INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> Node with ID 2 exists in new membership of channel mychannel
+[34m2025-03-19 09:17:52.750 UTC 0058 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #9 SubChannel #10]Subchannel Connectivity change to CONNECTING
+[34m2025-03-19 09:17:52.750 UTC 0059 INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> Node with ID 3 exists in new membership of channel mychannel
+[34m2025-03-19 09:17:52.750 UTC 005b INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> Node with ID 4 exists in new membership of channel mychannel
+[34m2025-03-19 09:17:52.750 UTC 005c INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> Node with ID 1 exists in new membership of channel mychannel
+[34m2025-03-19 09:17:52.750 UTC 005a INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #9 SubChannel #10]Subchannel picks a new address "orderer4.example.com:7054" to connect
+[34m2025-03-19 09:17:52.750 UTC 005e INFO[0m [orderer.consensus.smartbft.chain] [34;1mNewChain[0m -> SmartBFT-v3 is now servicing chain channel=mychannel
+[34m2025-03-19 09:17:52.750 UTC 005d INFO[0m [grpc] [34;1mInfof[0m -> [pick-first-lb] [pick-first-lb 0xc000e85d10] Received SubConn state update: 0xc000e08960, {ConnectivityState:CONNECTING ConnectionError:<nil> connectedAddress:{Addr: ServerName: Attributes:<nil> BalancerAttributes:<nil> Metadata:<nil>}}
+[34m2025-03-19 09:17:52.759 UTC 005f INFO[0m [orderer.common.cluster] [34;1mConfigureNodeCerts[0m -> Updating nodes identity, channel: mychannel, nodes: [id:1 host:"orderer1.example.com" port:7051 msp_id:"OrdererMSP" identity:"-----BEGIN CERTIFICATE-----\nMIICHjCCAcWgAwIBAgIQU/QipR5TSVQkTmhYsG4+PDAKBggqhkjOPQQDAjBpMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xFzAVBgNVBAMTDmNhLmV4YW1w\nbGUuY29tMB4XDTI1MDMxOTA5MDgwMFoXDTM1MDMxNzA5MDgwMFowazELMAkGA1UE\nBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lz\nY28xEDAOBgNVBAsTB29yZGVyZXIxHTAbBgNVBAMTFG9yZGVyZXIxLmV4YW1wbGUu\nY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEMvtIMnFqAiO61E/6tQ1G9Njl\nSeUJx+BwXF2RPzL1g+Azjx58JoZCC2pEBxNd++rSHDCsPAsYPp1PWHB9MxPD76NN\nMEswDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgOgty\nwV7zpJLwo6VSRU8KmWh7c4ocIxV9ox49tFnUm4IwCgYIKoZIzj0EAwIDRwAwRAIg\nZAHithzMJ6hk5/msAZntYpToONx20Dpulaa1jKDd3jkCIAOlRkaaa9QkA225kBIV\n3I5uLz0U9tbr7hiMDC3JRG8t\n-----END CERTIFICATE-----\n" client_tls_cert:"-----BEGIN CERTIFICATE-----\nMIICaDCCAg6gAwIBAgIRAJ/t5RheXN6dHjVthGoF9vUwCgYIKoZIzj0EAwIwbDEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l\neGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ\nBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh\nbmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMS5leGFtcGxlLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABADWLzjrgLm9gV0WwoX+eLCB+76ECyr20CEoO+2NrpV0\nq9OsndwAFiQ1KsO+VcIkSG81RSuCr5Q0+pxiN89qlxmjgaMwgaAwDgYDVR0PAQH/\nBAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E\nAjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo\nMDQGA1UdEQQtMCuCFG9yZGVyZXIxLmV4YW1wbGUuY29tgghvcmRlcmVyMYIJbG9j\nYWxob3N0MAoGCCqGSM49BAMCA0gAMEUCIQD8q2u3aO39xPCCAJ0W+KLhFSx6x2xp\nTqp7H/2GWDB2LgIgfEqt+n9HSjqnVfcCuXnZJ1UN2H0/Rpa60T320M/so90=\n-----END CERTIFICATE-----\n" server_tls_cert:"-----BEGIN CERTIFICATE-----\nMIICaDCCAg6gAwIBAgIRAJ/t5RheXN6dHjVthGoF9vUwCgYIKoZIzj0EAwIwbDEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l\neGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ\nBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh\nbmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMS5leGFtcGxlLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABADWLzjrgLm9gV0WwoX+eLCB+76ECyr20CEoO+2NrpV0\nq9OsndwAFiQ1KsO+VcIkSG81RSuCr5Q0+pxiN89qlxmjgaMwgaAwDgYDVR0PAQH/\nBAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E\nAjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo\nMDQGA1UdEQQtMCuCFG9yZGVyZXIxLmV4YW1wbGUuY29tgghvcmRlcmVyMYIJbG9j\nYWxob3N0MAoGCCqGSM49BAMCA0gAMEUCIQD8q2u3aO39xPCCAJ0W+KLhFSx6x2xp\nTqp7H/2GWDB2LgIgfEqt+n9HSjqnVfcCuXnZJ1UN2H0/Rpa60T320M/so90=\n-----END CERTIFICATE-----\n" id:2 host:"orderer2.example.com" port:7052 msp_id:"OrdererMSP" identity:"-----BEGIN CERTIFICATE-----\nMIICHjCCAcWgAwIBAgIQJaSyb2fyQ/fp52LFGtNaIjAKBggqhkjOPQQDAjBpMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xFzAVBgNVBAMTDmNhLmV4YW1w\nbGUuY29tMB4XDTI1MDMxOTA5MDgwMFoXDTM1MDMxNzA5MDgwMFowazELMAkGA1UE\nBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lz\nY28xEDAOBgNVBAsTB29yZGVyZXIxHTAbBgNVBAMTFG9yZGVyZXIyLmV4YW1wbGUu\nY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/HhEt0JU17nc6OiPNE4d1cxN\nGRcx/Oyulvn/6CNDAgPzLoH6DtJydXReL4AOpYVU8yf+MQrDbumS20hplr3H0KNN\nMEswDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgOgty\nwV7zpJLwo6VSRU8KmWh7c4ocIxV9ox49tFnUm4IwCgYIKoZIzj0EAwIDRwAwRAIg\nRcxR8XP9bWuck4SKPPu5bc5LVlU+g4VxQIyfapIynf0CIGsB6KE2sLaaZ69zXpfx\nTjNsIx3YEKbic4f6qjJgXKmF\n-----END CERTIFICATE-----\n" client_tls_cert:"-----BEGIN CERTIFICATE-----\nMIICaDCCAg6gAwIBAgIRAIC4vkzc7CCcdmAft0wt8egwCgYIKoZIzj0EAwIwbDEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l\neGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ\nBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh\nbmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMi5leGFtcGxlLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABKjj8L5RysJk6JIcj2qcuTZoT+PZu6F4WyW0U715yLY0\nflhOCCQLqLBZphd0N6Dba9aDfSkr6J4k9wCZAkja9UqjgaMwgaAwDgYDVR0PAQH/\nBAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E\nAjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo\nMDQGA1UdEQQtMCuCFG9yZGVyZXIyLmV4YW1wbGUuY29tgghvcmRlcmVyMoIJbG9j\nYWxob3N0MAoGCCqGSM49BAMCA0gAMEUCIQDpa+zBeZnYRFRueZRbvUJMQJq5PQNY\now3xu6AU1xSyhAIgVwiz1NCEbGxFqZDC6GEaf5SYNnNNPX4Te5KOwHwpz3k=\n-----END CERTIFICATE-----\n" server_tls_cert:"-----BEGIN CERTIFICATE-----\nMIICaDCCAg6gAwIBAgIRAIC4vkzc7CCcdmAft0wt8egwCgYIKoZIzj0EAwIwbDEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l\neGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ\nBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh\nbmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMi5leGFtcGxlLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABKjj8L5RysJk6JIcj2qcuTZoT+PZu6F4WyW0U715yLY0\nflhOCCQLqLBZphd0N6Dba9aDfSkr6J4k9wCZAkja9UqjgaMwgaAwDgYDVR0PAQH/\nBAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E\nAjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo\nMDQGA1UdEQQtMCuCFG9yZGVyZXIyLmV4YW1wbGUuY29tgghvcmRlcmVyMoIJbG9j\nYWxob3N0MAoGCCqGSM49BAMCA0gAMEUCIQDpa+zBeZnYRFRueZRbvUJMQJq5PQNY\now3xu6AU1xSyhAIgVwiz1NCEbGxFqZDC6GEaf5SYNnNNPX4Te5KOwHwpz3k=\n-----END CERTIFICATE-----\n" id:3 host:"orderer3.example.com" port:7053 msp_id:"OrdererMSP" identity:"-----BEGIN CERTIFICATE-----\nMIICIDCCAcagAwIBAgIRALy8Yae9gTG6pPHoOSRwlhMwCgYIKoZIzj0EAwIwaTEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRcwFQYDVQQDEw5jYS5leGFt\ncGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMGsxCzAJBgNV\nBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJhbmNp\nc2NvMRAwDgYDVQQLEwdvcmRlcmVyMR0wGwYDVQQDExRvcmRlcmVyMy5leGFtcGxl\nLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABHdA0seFXGyBigPQtzkT8j/Q\n46fPkk7bwhGH8wv5jX/Gv9KsoiYUsWXqvVsSsz/lxyGmX68ttHmJEflgykXPtwyj\nTTBLMA4GA1UdDwEB/wQEAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIDoL\ncsFe86SS8KOlUkVPCploe3OKHCMVfaMePbRZ1JuCMAoGCCqGSM49BAMCA0gAMEUC\nIQDUAtS7icz0tJ0ISHZDzQhQsM+MXrkiRACgCEZUwBiOUwIgBuvpfaqTTBai+dk8\nNQBNz1MfQnMMD5JILLJ4RBobXSA=\n-----END CERTIFICATE-----\n" client_tls_cert:"-----BEGIN CERTIFICATE-----\nMIICZzCCAg2gAwIBAgIQFC41kXqgfh+1JuxvltyjVzAKBggqhkjOPQQDAjBsMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xGjAYBgNVBAMTEXRsc2NhLmV4\nYW1wbGUuY29tMB4XDTI1MDMxOTA5MDgwMFoXDTM1MDMxNzA5MDgwMFowWTELMAkG\nA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFu\nY2lzY28xHTAbBgNVBAMTFG9yZGVyZXIzLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0C\nAQYIKoZIzj0DAQcDQgAE5V1bIv2dgS3zPGxkL61lfpqIcgxLCv8CQlv8TtHJdPjr\nmjyCjnOjaKiznHVknlxxOmfyhZA/xMTLDY7IZqHGv6OBozCBoDAOBgNVHQ8BAf8E\nBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQC\nMAAwKwYDVR0jBCQwIoAgHk6p2OjJYHE5aAZtpo6mUIVhsFTmellnLfGlY2AFWigw\nNAYDVR0RBC0wK4IUb3JkZXJlcjMuZXhhbXBsZS5jb22CCG9yZGVyZXIzgglsb2Nh\nbGhvc3QwCgYIKoZIzj0EAwIDSAAwRQIhAIBrgMVuLkOzl7K3UqOt0C9/LKCu56rz\ngp3gkN5OyktNAiBYaXTNgohkdxJWBPXnr0m++qcbbMi9sbEXS3HbWuE/UA==\n-----END CERTIFICATE-----\n" server_tls_cert:"-----BEGIN CERTIFICATE-----\nMIICZzCCAg2gAwIBAgIQFC41kXqgfh+1JuxvltyjVzAKBggqhkjOPQQDAjBsMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xGjAYBgNVBAMTEXRsc2NhLmV4\nYW1wbGUuY29tMB4XDTI1MDMxOTA5MDgwMFoXDTM1MDMxNzA5MDgwMFowWTELMAkG\nA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFu\nY2lzY28xHTAbBgNVBAMTFG9yZGVyZXIzLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0C\nAQYIKoZIzj0DAQcDQgAE5V1bIv2dgS3zPGxkL61lfpqIcgxLCv8CQlv8TtHJdPjr\nmjyCjnOjaKiznHVknlxxOmfyhZA/xMTLDY7IZqHGv6OBozCBoDAOBgNVHQ8BAf8E\nBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQC\nMAAwKwYDVR0jBCQwIoAgHk6p2OjJYHE5aAZtpo6mUIVhsFTmellnLfGlY2AFWigw\nNAYDVR0RBC0wK4IUb3JkZXJlcjMuZXhhbXBsZS5jb22CCG9yZGVyZXIzgglsb2Nh\nbGhvc3QwCgYIKoZIzj0EAwIDSAAwRQIhAIBrgMVuLkOzl7K3UqOt0C9/LKCu56rz\ngp3gkN5OyktNAiBYaXTNgohkdxJWBPXnr0m++qcbbMi9sbEXS3HbWuE/UA==\n-----END CERTIFICATE-----\n" id:4 host:"orderer4.example.com" port:7054 msp_id:"OrdererMSP" identity:"-----BEGIN CERTIFICATE-----\nMIICHjCCAcWgAwIBAgIQb2iQ6TCtjk3VpIjkqTYJTzAKBggqhkjOPQQDAjBpMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xFzAVBgNVBAMTDmNhLmV4YW1w\nbGUuY29tMB4XDTI1MDMxOTA5MDgwMFoXDTM1MDMxNzA5MDgwMFowazELMAkGA1UE\nBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lz\nY28xEDAOBgNVBAsTB29yZGVyZXIxHTAbBgNVBAMTFG9yZGVyZXI0LmV4YW1wbGUu\nY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE3F7dMxIN9KGjE6UVEwnz5Ot+\nX1AEw0V9QKMx/DxNvEP6+dnIuH4DKEtELKnaTTtCSy1ChBzno+P5x70DJ6oyVqNN\nMEswDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgOgty\nwV7zpJLwo6VSRU8KmWh7c4ocIxV9ox49tFnUm4IwCgYIKoZIzj0EAwIDRwAwRAIg\nAbs/fLRI1SyNAINngvuUCaBN4UeDLZpBN40m6dGKUAwCIDso6FVb4FR83ny0C01A\n6BwkP70EmJzdZMqK8EJ0NdKJ\n-----END CERTIFICATE-----\n" client_tls_cert:"-----BEGIN CERTIFICATE-----\nMIICZzCCAg6gAwIBAgIRAIPdcFBsXuWo+8NfRa+z+WYwCgYIKoZIzj0EAwIwbDEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l\neGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ\nBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh\nbmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyNC5leGFtcGxlLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABBM4BgeChxQIujye8a6TUWNgLYUpRAipG0L1MD9SaUW3\n+DVZUarIU5TLQs5qFoVyIphckouGi/Gh7UsPeLtSITWjgaMwgaAwDgYDVR0PAQH/\nBAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E\nAjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo\nMDQGA1UdEQQtMCuCFG9yZGVyZXI0LmV4YW1wbGUuY29tgghvcmRlcmVyNIIJbG9j\nYWxob3N0MAoGCCqGSM49BAMCA0cAMEQCICfdncFX6QPvHROcPFvNgbvxANfmSTmG\nJR0okJOMH8nbAiB0LKEHFinrlSMpiZGih5tbVLOI1Ev3sCKNEuM3i5cfYA==\n-----END CERTIFICATE-----\n" server_tls_cert:"-----BEGIN CERTIFICATE-----\nMIICZzCCAg6gAwIBAgIRAIPdcFBsXuWo+8NfRa+z+WYwCgYIKoZIzj0EAwIwbDEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l\neGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ\nBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh\nbmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyNC5leGFtcGxlLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABBM4BgeChxQIujye8a6TUWNgLYUpRAipG0L1MD9SaUW3\n+DVZUarIU5TLQs5qFoVyIphckouGi/Gh7UsPeLtSITWjgaMwgaAwDgYDVR0PAQH/\nBAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E\nAjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo\nMDQGA1UdEQQtMCuCFG9yZGVyZXI0LmV4YW1wbGUuY29tgghvcmRlcmVyNIIJbG9j\nYWxob3N0MAoGCCqGSM49BAMCA0cAMEQCICfdncFX6QPvHROcPFvNgbvxANfmSTmG\nJR0okJOMH8nbAiB0LKEHFinrlSMpiZGih5tbVLOI1Ev3sCKNEuM3i5cfYA==\n-----END CERTIFICATE-----\n"]
+[34m2025-03-19 09:17:52.760 UTC 0060 INFO[0m [orderer.common.multichannel] [34;1mcreateAsMember[0m -> Joining channel: {mychannel  consenter active 1}
+[34m2025-03-19 09:17:52.761 UTC 0061 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #5 SubChannel #6]Subchannel Connectivity change to READY
+[34m2025-03-19 09:17:52.761 UTC 0063 INFO[0m [grpc] [34;1mInfof[0m -> [pick-first-lb] [pick-first-lb 0xc000c1e810] Received SubConn state update: 0xc000e84150, {ConnectivityState:READY ConnectionError:<nil> connectedAddress:{Addr:orderer2.example.com:7052 ServerName:orderer2.example.com:7052 Attributes:<nil> BalancerAttributes:<nil> Metadata:<nil>}}
+[34m2025-03-19 09:17:52.761 UTC 0064 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #5]Channel Connectivity change to READY
+[34m2025-03-19 09:17:52.760 UTC 0062 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #7 SubChannel #8]Subchannel Connectivity change to READY
+[34m2025-03-19 09:17:52.761 UTC 0065 INFO[0m [grpc] [34;1mInfof[0m -> [pick-first-lb] [pick-first-lb 0xc000e84ed0] Received SubConn state update: 0xc000e84ff0, {ConnectivityState:READY ConnectionError:<nil> connectedAddress:{Addr:orderer3.example.com:7053 ServerName:orderer3.example.com:7053 Attributes:<nil> BalancerAttributes:<nil> Metadata:<nil>}}
+[34m2025-03-19 09:17:52.761 UTC 0066 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #7]Channel Connectivity change to READY
+[34m2025-03-19 09:17:52.761 UTC 0067 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #3 SubChannel #4]Subchannel Connectivity change to READY
+[34m2025-03-19 09:17:52.761 UTC 0068 INFO[0m [grpc] [34;1mInfof[0m -> [pick-first-lb] [pick-first-lb 0xc000bbb980] Received SubConn state update: 0xc000bbbad0, {ConnectivityState:READY ConnectionError:<nil> connectedAddress:{Addr:orderer1.example.com:7051 ServerName:orderer1.example.com:7051 Attributes:<nil> BalancerAttributes:<nil> Metadata:<nil>}}
+[34m2025-03-19 09:17:52.761 UTC 0069 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #3]Channel Connectivity change to READY
+[34m2025-03-19 09:17:52.762 UTC 006a INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #9 SubChannel #10]Subchannel Connectivity change to READY
+[34m2025-03-19 09:17:52.762 UTC 006b INFO[0m [grpc] [34;1mInfof[0m -> [pick-first-lb] [pick-first-lb 0xc000e85d10] Received SubConn state update: 0xc000e08960, {ConnectivityState:READY ConnectionError:<nil> connectedAddress:{Addr:orderer4.example.com:7054 ServerName:orderer4.example.com:7054 Attributes:<nil> BalancerAttributes:<nil> Metadata:<nil>}}
+[34m2025-03-19 09:17:52.762 UTC 006c INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Channel #9]Channel Connectivity change to READY
+[34m2025-03-19 09:17:52.773 UTC 006d INFO[0m [orderer.consensus.smartbft.consensus] [34;1mLoadViewChangeIfApplicable[0m -> Nothing to restore channel=mychannel
+[34m2025-03-19 09:17:52.774 UTC 006e INFO[0m [orderer.consensus.smartbft.consensus] [34;1mLoadNewViewIfApplicable[0m -> Nothing to restore channel=mychannel
+[34m2025-03-19 09:17:52.774 UTC 006f INFO[0m [orderer.consensus.smartbft.consensus] [34;1mRestore[0m -> Nothing to restore channel=mychannel
+[34m2025-03-19 09:17:52.774 UTC 0070 INFO[0m [orderer.consensus.smartbft.consensus] [34;1mChangeRole[0m -> Changing to leader role, current view: 0, current leader: 1 channel=mychannel
+[34m2025-03-19 09:17:52.774 UTC 0071 INFO[0m [orderer.consensus.smartbft.consensus] [34;1mstartView[0m -> Starting view with number 0, sequence 1, and decisions 0 channel=mychannel
+[34m2025-03-19 09:17:58.358 UTC 0072 INFO[0m [grpc] [34;1mInfof[0m -> [transport] [server-transport 0xc0005da1a0] Closing: EOF
+[34m2025-03-19 09:17:58.358 UTC 0073 INFO[0m [grpc] [34;1mInfof[0m -> [transport] [server-transport 0xc0005da1a0] loopyWriter exiting with error: transport closed by client
+[33m2025-03-19 09:17:58.359 UTC 0074 WARN[0m [common.deliver] [33;1mHandle[0m -> Error reading from 172.17.0.1:47046: rpc error: code = Canceled desc = context canceled
+[34m2025-03-19 09:17:58.359 UTC 0075 INFO[0m [comm.grpc.server] [34;1mfunc1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Deliver grpc.peer_address=172.17.0.1:47046 error="rpc error: code = Canceled desc = context canceled" grpc.code=Canceled grpc.call_duration=6.578795ms
+[34m2025-03-19 09:17:59.000 UTC 0076 INFO[0m [orderer.consensus.smartbft] [34;1mverifyConfigUpdateMsg[0m -> Applying filters for config update of type CONFIG to channel mychannel
+[34m2025-03-19 09:17:59.006 UTC 0077 INFO[0m [grpc] [34;1mInfof[0m -> [transport] [server-transport 0xc0005da4e0] Closing: EOF
+[34m2025-03-19 09:17:59.006 UTC 0078 INFO[0m [grpc] [34;1mInfof[0m -> [transport] [server-transport 0xc0005da4e0] loopyWriter exiting with error: transport closed by client
+[33m2025-03-19 09:17:59.006 UTC 0079 WARN[0m [orderer.common.broadcast] [33;1mHandle[0m -> Error reading from 172.17.0.1:47054: rpc error: code = Canceled desc = context canceled
+[34m2025-03-19 09:17:59.006 UTC 007a INFO[0m [comm.grpc.server] [34;1mfunc1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Broadcast grpc.peer_address=172.17.0.1:47054 error="rpc error: code = Canceled desc = context canceled" grpc.code=Canceled grpc.call_duration=10.661777ms
+[34m2025-03-19 09:17:59.037 UTC 007b INFO[0m [orderer.consensus.smartbft.consensus] [34;1mmetadataWithUpdatedBlacklist[0m -> Skipping updating blacklist due to verification sequence changing from 18446744073709551615 to 0 channel=mychannel
+[34m2025-03-19 09:17:59.038 UTC 007c INFO[0m [orderer.consensus.smartbft] [34;1mverifyConfigUpdateMsg[0m -> Applying filters for config update of type CONFIG to channel mychannel
+[34m2025-03-19 09:17:59.040 UTC 007d INFO[0m [orderer.consensus.smartbft.consensus] [34;1mverifyPrevCommitSignatures[0m -> Skipping verifying prev commit signatures due to verification sequence advancing from 18446744073709551615 to 0 channel=mychannel
+[34m2025-03-19 09:17:59.042 UTC 007e INFO[0m [orderer.consensus.smartbft.consensus] [34;1mprocessProposal[0m -> Processed proposal with seq 1 channel=mychannel
+[34m2025-03-19 09:17:59.052 UTC 007f INFO[0m [orderer.consensus.smartbft.consensus] [34;1mprocessPrepares[0m -> 1 collected 2 prepares from [2 4] channel=mychannel
+[34m2025-03-19 09:17:59.054 UTC 0080 INFO[0m [orderer.consensus.smartbft.consensus] [34;1mprocessPrepares[0m -> Processed prepares for proposal with seq 1 channel=mychannel
+[34m2025-03-19 09:17:59.056 UTC 0081 INFO[0m [orderer.consensus.smartbft.consensus] [34;1mprocessCommits[0m -> 1 collected 2 commits from [3 2] channel=mychannel
+[34m2025-03-19 09:17:59.057 UTC 0082 INFO[0m [orderer.consensus.smartbft.consensus] [34;1mprepared[0m -> 1 processed commits for proposal with seq 1 channel=mychannel
+[34m2025-03-19 09:17:59.057 UTC 0083 INFO[0m [orderer.consensus.smartbft.consensus] [34;1mdecide[0m -> Deciding on seq 1 channel=mychannel
+[34m2025-03-19 09:17:59.057 UTC 0084 INFO[0m [orderer.consensus.smartbft.consensus] [34;1mstartNextSeq[0m -> Sequence: 1-->2 channel=mychannel
+[34m2025-03-19 09:17:59.057 UTC 0085 INFO[0m [orderer.consensus.smartbft.chain] [34;1mDeliver[0m -> Delivering proposal, writing block 1 with 1 transactions and metadata of total size 326 with signatures from [3 2 1] to the ledger, node id 1 channel=mychannel
+[34m2025-03-19 09:17:59.070 UTC 0086 INFO[0m [orderer.consensus.smartbft.chain] [34;1mRemoteNodesFromConfigBlock[0m -> mychannel 1 ---> -----BEGIN CERTIFICATE-----
+MIICHjCCAcWgAwIBAgIQU/QipR5TSVQkTmhYsG4+PDAKBggqhkjOPQQDAjBpMQsw
+CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+YW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xFzAVBgNVBAMTDmNhLmV4YW1w
+bGUuY29tMB4XDTI1MDMxOTA5MDgwMFoXDTM1MDMxNzA5MDgwMFowazELMAkGA1UE
+BhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lz
+Y28xEDAOBgNVBAsTB29yZGVyZXIxHTAbBgNVBAMTFG9yZGVyZXIxLmV4YW1wbGUu
+Y29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEMvtIMnFqAiO61E/6tQ1G9Njl
+SeUJx+BwXF2RPzL1g+Azjx58JoZCC2pEBxNd++rSHDCsPAsYPp1PWHB9MxPD76NN
+MEswDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgOgty
+wV7zpJLwo6VSRU8KmWh7c4ocIxV9ox49tFnUm4IwCgYIKoZIzj0EAwIDRwAwRAIg
+ZAHithzMJ6hk5/msAZntYpToONx20Dpulaa1jKDd3jkCIAOlRkaaa9QkA225kBIV
+3I5uLz0U9tbr7hiMDC3JRG8t
+-----END CERTIFICATE----- channel=mychannel
+[34m2025-03-19 09:17:59.070 UTC 0087 INFO[0m [orderer.consensus.smartbft.chain] [34;1mRemoteNodesFromConfigBlock[0m -> mychannel 2 ---> -----BEGIN CERTIFICATE-----
+MIICHjCCAcWgAwIBAgIQJaSyb2fyQ/fp52LFGtNaIjAKBggqhkjOPQQDAjBpMQsw
+CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+YW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xFzAVBgNVBAMTDmNhLmV4YW1w
+bGUuY29tMB4XDTI1MDMxOTA5MDgwMFoXDTM1MDMxNzA5MDgwMFowazELMAkGA1UE
+BhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lz
+Y28xEDAOBgNVBAsTB29yZGVyZXIxHTAbBgNVBAMTFG9yZGVyZXIyLmV4YW1wbGUu
+Y29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/HhEt0JU17nc6OiPNE4d1cxN
+GRcx/Oyulvn/6CNDAgPzLoH6DtJydXReL4AOpYVU8yf+MQrDbumS20hplr3H0KNN
+MEswDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgOgty
+wV7zpJLwo6VSRU8KmWh7c4ocIxV9ox49tFnUm4IwCgYIKoZIzj0EAwIDRwAwRAIg
+RcxR8XP9bWuck4SKPPu5bc5LVlU+g4VxQIyfapIynf0CIGsB6KE2sLaaZ69zXpfx
+TjNsIx3YEKbic4f6qjJgXKmF
+-----END CERTIFICATE----- channel=mychannel
+[34m2025-03-19 09:17:59.070 UTC 0088 INFO[0m [orderer.consensus.smartbft.chain] [34;1mRemoteNodesFromConfigBlock[0m -> mychannel 3 ---> -----BEGIN CERTIFICATE-----
+MIICIDCCAcagAwIBAgIRALy8Yae9gTG6pPHoOSRwlhMwCgYIKoZIzj0EAwIwaTEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRcwFQYDVQQDEw5jYS5leGFt
+cGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMGsxCzAJBgNV
+BAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJhbmNp
+c2NvMRAwDgYDVQQLEwdvcmRlcmVyMR0wGwYDVQQDExRvcmRlcmVyMy5leGFtcGxl
+LmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABHdA0seFXGyBigPQtzkT8j/Q
+46fPkk7bwhGH8wv5jX/Gv9KsoiYUsWXqvVsSsz/lxyGmX68ttHmJEflgykXPtwyj
+TTBLMA4GA1UdDwEB/wQEAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIDoL
+csFe86SS8KOlUkVPCploe3OKHCMVfaMePbRZ1JuCMAoGCCqGSM49BAMCA0gAMEUC
+IQDUAtS7icz0tJ0ISHZDzQhQsM+MXrkiRACgCEZUwBiOUwIgBuvpfaqTTBai+dk8
+NQBNz1MfQnMMD5JILLJ4RBobXSA=
+-----END CERTIFICATE----- channel=mychannel
+[34m2025-03-19 09:17:59.070 UTC 0089 INFO[0m [orderer.consensus.smartbft.chain] [34;1mRemoteNodesFromConfigBlock[0m -> mychannel 4 ---> -----BEGIN CERTIFICATE-----
+MIICHjCCAcWgAwIBAgIQb2iQ6TCtjk3VpIjkqTYJTzAKBggqhkjOPQQDAjBpMQsw
+CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+YW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xFzAVBgNVBAMTDmNhLmV4YW1w
+bGUuY29tMB4XDTI1MDMxOTA5MDgwMFoXDTM1MDMxNzA5MDgwMFowazELMAkGA1UE
+BhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lz
+Y28xEDAOBgNVBAsTB29yZGVyZXIxHTAbBgNVBAMTFG9yZGVyZXI0LmV4YW1wbGUu
+Y29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE3F7dMxIN9KGjE6UVEwnz5Ot+
+X1AEw0V9QKMx/DxNvEP6+dnIuH4DKEtELKnaTTtCSy1ChBzno+P5x70DJ6oyVqNN
+MEswDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgOgty
+wV7zpJLwo6VSRU8KmWh7c4ocIxV9ox49tFnUm4IwCgYIKoZIzj0EAwIDRwAwRAIg
+Abs/fLRI1SyNAINngvuUCaBN4UeDLZpBN40m6dGKUAwCIDso6FVb4FR83ny0C01A
+6BwkP70EmJzdZMqK8EJ0NdKJ
+-----END CERTIFICATE----- channel=mychannel
+[34m2025-03-19 09:17:59.072 UTC 008a INFO[0m [orderer.common.cluster] [34;1mConfigure[0m -> Configuring communication module for Channel: mychannel with nodes:[ID: 1,
+Endpoint: orderer1.example.com:7051,
+ServerTLSCert:-----BEGIN CERTIFICATE-----
+MIICaDCCAg6gAwIBAgIRAJ/t5RheXN6dHjVthGoF9vUwCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMS5leGFtcGxlLmNvbTBZMBMGByqGSM49
+AgEGCCqGSM49AwEHA0IABADWLzjrgLm9gV0WwoX+eLCB+76ECyr20CEoO+2NrpV0
+q9OsndwAFiQ1KsO+VcIkSG81RSuCr5Q0+pxiN89qlxmjgaMwgaAwDgYDVR0PAQH/
+BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
+AjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo
+MDQGA1UdEQQtMCuCFG9yZGVyZXIxLmV4YW1wbGUuY29tgghvcmRlcmVyMYIJbG9j
+YWxob3N0MAoGCCqGSM49BAMCA0gAMEUCIQD8q2u3aO39xPCCAJ0W+KLhFSx6x2xp
+Tqp7H/2GWDB2LgIgfEqt+n9HSjqnVfcCuXnZJ1UN2H0/Rpa60T320M/so90=
+-----END CERTIFICATE-----
+,
+ClientTLSCert:-----BEGIN CERTIFICATE-----
+MIICaDCCAg6gAwIBAgIRAJ/t5RheXN6dHjVthGoF9vUwCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMS5leGFtcGxlLmNvbTBZMBMGByqGSM49
+AgEGCCqGSM49AwEHA0IABADWLzjrgLm9gV0WwoX+eLCB+76ECyr20CEoO+2NrpV0
+q9OsndwAFiQ1KsO+VcIkSG81RSuCr5Q0+pxiN89qlxmjgaMwgaAwDgYDVR0PAQH/
+BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
+AjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo
+MDQGA1UdEQQtMCuCFG9yZGVyZXIxLmV4YW1wbGUuY29tgghvcmRlcmVyMYIJbG9j
+YWxob3N0MAoGCCqGSM49BAMCA0gAMEUCIQD8q2u3aO39xPCCAJ0W+KLhFSx6x2xp
+Tqp7H/2GWDB2LgIgfEqt+n9HSjqnVfcCuXnZJ1UN2H0/Rpa60T320M/so90=
+-----END CERTIFICATE-----
+, ServerRootCA: [-----BEGIN CERTIFICATE-----
+MIICRDCCAeqgAwIBAgIRAMh+TEXdYll154DKo30yg78wCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMGwxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMRQwEgYDVQQKEwtleGFtcGxlLmNvbTEaMBgGA1UEAxMRdGxzY2EuZXhh
+bXBsZS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATfE74lWGwiIxmc5i4Z
+kpVq3Yab//rrkyCgbQEV9Pkxrj+cCZpJGbx/xdz3P+9r/ZETcBU4LVjPzNeYZWeE
+q5xNo20wazAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsG
+AQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEIB5OqdjoyWBxOWgGbaaO
+plCFYbBU5npZZy3xpWNgBVooMAoGCCqGSM49BAMCA0gAMEUCIQDmcscXvNZM/anX
+7A+9mOZijFsabL9XrgBHw407oSUrgQIgeiEkOB2ljvZnbzCwP0xL1boNrLaeiDus
+kgmIabO/2TE=
+-----END CERTIFICATE-----
+] ID: 2,
+Endpoint: orderer2.example.com:7052,
+ServerTLSCert:-----BEGIN CERTIFICATE-----
+MIICaDCCAg6gAwIBAgIRAIC4vkzc7CCcdmAft0wt8egwCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMi5leGFtcGxlLmNvbTBZMBMGByqGSM49
+AgEGCCqGSM49AwEHA0IABKjj8L5RysJk6JIcj2qcuTZoT+PZu6F4WyW0U715yLY0
+flhOCCQLqLBZphd0N6Dba9aDfSkr6J4k9wCZAkja9UqjgaMwgaAwDgYDVR0PAQH/
+BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
+AjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo
+MDQGA1UdEQQtMCuCFG9yZGVyZXIyLmV4YW1wbGUuY29tgghvcmRlcmVyMoIJbG9j
+YWxob3N0MAoGCCqGSM49BAMCA0gAMEUCIQDpa+zBeZnYRFRueZRbvUJMQJq5PQNY
+ow3xu6AU1xSyhAIgVwiz1NCEbGxFqZDC6GEaf5SYNnNNPX4Te5KOwHwpz3k=
+-----END CERTIFICATE-----
+,
+ClientTLSCert:-----BEGIN CERTIFICATE-----
+MIICaDCCAg6gAwIBAgIRAIC4vkzc7CCcdmAft0wt8egwCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMi5leGFtcGxlLmNvbTBZMBMGByqGSM49
+AgEGCCqGSM49AwEHA0IABKjj8L5RysJk6JIcj2qcuTZoT+PZu6F4WyW0U715yLY0
+flhOCCQLqLBZphd0N6Dba9aDfSkr6J4k9wCZAkja9UqjgaMwgaAwDgYDVR0PAQH/
+BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
+AjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo
+MDQGA1UdEQQtMCuCFG9yZGVyZXIyLmV4YW1wbGUuY29tgghvcmRlcmVyMoIJbG9j
+YWxob3N0MAoGCCqGSM49BAMCA0gAMEUCIQDpa+zBeZnYRFRueZRbvUJMQJq5PQNY
+ow3xu6AU1xSyhAIgVwiz1NCEbGxFqZDC6GEaf5SYNnNNPX4Te5KOwHwpz3k=
+-----END CERTIFICATE-----
+, ServerRootCA: [-----BEGIN CERTIFICATE-----
+MIICRDCCAeqgAwIBAgIRAMh+TEXdYll154DKo30yg78wCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMGwxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMRQwEgYDVQQKEwtleGFtcGxlLmNvbTEaMBgGA1UEAxMRdGxzY2EuZXhh
+bXBsZS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATfE74lWGwiIxmc5i4Z
+kpVq3Yab//rrkyCgbQEV9Pkxrj+cCZpJGbx/xdz3P+9r/ZETcBU4LVjPzNeYZWeE
+q5xNo20wazAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsG
+AQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEIB5OqdjoyWBxOWgGbaaO
+plCFYbBU5npZZy3xpWNgBVooMAoGCCqGSM49BAMCA0gAMEUCIQDmcscXvNZM/anX
+7A+9mOZijFsabL9XrgBHw407oSUrgQIgeiEkOB2ljvZnbzCwP0xL1boNrLaeiDus
+kgmIabO/2TE=
+-----END CERTIFICATE-----
+] ID: 3,
+Endpoint: orderer3.example.com:7053,
+ServerTLSCert:-----BEGIN CERTIFICATE-----
+MIICZzCCAg2gAwIBAgIQFC41kXqgfh+1JuxvltyjVzAKBggqhkjOPQQDAjBsMQsw
+CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+YW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xGjAYBgNVBAMTEXRsc2NhLmV4
+YW1wbGUuY29tMB4XDTI1MDMxOTA5MDgwMFoXDTM1MDMxNzA5MDgwMFowWTELMAkG
+A1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFu
+Y2lzY28xHTAbBgNVBAMTFG9yZGVyZXIzLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0C
+AQYIKoZIzj0DAQcDQgAE5V1bIv2dgS3zPGxkL61lfpqIcgxLCv8CQlv8TtHJdPjr
+mjyCjnOjaKiznHVknlxxOmfyhZA/xMTLDY7IZqHGv6OBozCBoDAOBgNVHQ8BAf8E
+BAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQC
+MAAwKwYDVR0jBCQwIoAgHk6p2OjJYHE5aAZtpo6mUIVhsFTmellnLfGlY2AFWigw
+NAYDVR0RBC0wK4IUb3JkZXJlcjMuZXhhbXBsZS5jb22CCG9yZGVyZXIzgglsb2Nh
+bGhvc3QwCgYIKoZIzj0EAwIDSAAwRQIhAIBrgMVuLkOzl7K3UqOt0C9/LKCu56rz
+gp3gkN5OyktNAiBYaXTNgohkdxJWBPXnr0m++qcbbMi9sbEXS3HbWuE/UA==
+-----END CERTIFICATE-----
+,
+ClientTLSCert:-----BEGIN CERTIFICATE-----
+MIICZzCCAg2gAwIBAgIQFC41kXqgfh+1JuxvltyjVzAKBggqhkjOPQQDAjBsMQsw
+CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+YW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xGjAYBgNVBAMTEXRsc2NhLmV4
+YW1wbGUuY29tMB4XDTI1MDMxOTA5MDgwMFoXDTM1MDMxNzA5MDgwMFowWTELMAkG
+A1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFu
+Y2lzY28xHTAbBgNVBAMTFG9yZGVyZXIzLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0C
+AQYIKoZIzj0DAQcDQgAE5V1bIv2dgS3zPGxkL61lfpqIcgxLCv8CQlv8TtHJdPjr
+mjyCjnOjaKiznHVknlxxOmfyhZA/xMTLDY7IZqHGv6OBozCBoDAOBgNVHQ8BAf8E
+BAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQC
+MAAwKwYDVR0jBCQwIoAgHk6p2OjJYHE5aAZtpo6mUIVhsFTmellnLfGlY2AFWigw
+NAYDVR0RBC0wK4IUb3JkZXJlcjMuZXhhbXBsZS5jb22CCG9yZGVyZXIzgglsb2Nh
+bGhvc3QwCgYIKoZIzj0EAwIDSAAwRQIhAIBrgMVuLkOzl7K3UqOt0C9/LKCu56rz
+gp3gkN5OyktNAiBYaXTNgohkdxJWBPXnr0m++qcbbMi9sbEXS3HbWuE/UA==
+-----END CERTIFICATE-----
+, ServerRootCA: [-----BEGIN CERTIFICATE-----
+MIICRDCCAeqgAwIBAgIRAMh+TEXdYll154DKo30yg78wCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMGwxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMRQwEgYDVQQKEwtleGFtcGxlLmNvbTEaMBgGA1UEAxMRdGxzY2EuZXhh
+bXBsZS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATfE74lWGwiIxmc5i4Z
+kpVq3Yab//rrkyCgbQEV9Pkxrj+cCZpJGbx/xdz3P+9r/ZETcBU4LVjPzNeYZWeE
+q5xNo20wazAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsG
+AQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEIB5OqdjoyWBxOWgGbaaO
+plCFYbBU5npZZy3xpWNgBVooMAoGCCqGSM49BAMCA0gAMEUCIQDmcscXvNZM/anX
+7A+9mOZijFsabL9XrgBHw407oSUrgQIgeiEkOB2ljvZnbzCwP0xL1boNrLaeiDus
+kgmIabO/2TE=
+-----END CERTIFICATE-----
+] ID: 4,
+Endpoint: orderer4.example.com:7054,
+ServerTLSCert:-----BEGIN CERTIFICATE-----
+MIICZzCCAg6gAwIBAgIRAIPdcFBsXuWo+8NfRa+z+WYwCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyNC5leGFtcGxlLmNvbTBZMBMGByqGSM49
+AgEGCCqGSM49AwEHA0IABBM4BgeChxQIujye8a6TUWNgLYUpRAipG0L1MD9SaUW3
++DVZUarIU5TLQs5qFoVyIphckouGi/Gh7UsPeLtSITWjgaMwgaAwDgYDVR0PAQH/
+BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
+AjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo
+MDQGA1UdEQQtMCuCFG9yZGVyZXI0LmV4YW1wbGUuY29tgghvcmRlcmVyNIIJbG9j
+YWxob3N0MAoGCCqGSM49BAMCA0cAMEQCICfdncFX6QPvHROcPFvNgbvxANfmSTmG
+JR0okJOMH8nbAiB0LKEHFinrlSMpiZGih5tbVLOI1Ev3sCKNEuM3i5cfYA==
+-----END CERTIFICATE-----
+,
+ClientTLSCert:-----BEGIN CERTIFICATE-----
+MIICZzCCAg6gAwIBAgIRAIPdcFBsXuWo+8NfRa+z+WYwCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyNC5leGFtcGxlLmNvbTBZMBMGByqGSM49
+AgEGCCqGSM49AwEHA0IABBM4BgeChxQIujye8a6TUWNgLYUpRAipG0L1MD9SaUW3
++DVZUarIU5TLQs5qFoVyIphckouGi/Gh7UsPeLtSITWjgaMwgaAwDgYDVR0PAQH/
+BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
+AjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo
+MDQGA1UdEQQtMCuCFG9yZGVyZXI0LmV4YW1wbGUuY29tgghvcmRlcmVyNIIJbG9j
+YWxob3N0MAoGCCqGSM49BAMCA0cAMEQCICfdncFX6QPvHROcPFvNgbvxANfmSTmG
+JR0okJOMH8nbAiB0LKEHFinrlSMpiZGih5tbVLOI1Ev3sCKNEuM3i5cfYA==
+-----END CERTIFICATE-----
+, ServerRootCA: [-----BEGIN CERTIFICATE-----
+MIICRDCCAeqgAwIBAgIRAMh+TEXdYll154DKo30yg78wCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMGwxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMRQwEgYDVQQKEwtleGFtcGxlLmNvbTEaMBgGA1UEAxMRdGxzY2EuZXhh
+bXBsZS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATfE74lWGwiIxmc5i4Z
+kpVq3Yab//rrkyCgbQEV9Pkxrj+cCZpJGbx/xdz3P+9r/ZETcBU4LVjPzNeYZWeE
+q5xNo20wazAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsG
+AQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEIB5OqdjoyWBxOWgGbaaO
+plCFYbBU5npZZy3xpWNgBVooMAoGCCqGSM49BAMCA0gAMEUCIQDmcscXvNZM/anX
+7A+9mOZijFsabL9XrgBHw407oSUrgQIgeiEkOB2ljvZnbzCwP0xL1boNrLaeiDus
+kgmIabO/2TE=
+-----END CERTIFICATE-----
+]]
+[34m2025-03-19 09:17:59.073 UTC 008b INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> Node with ID 4 exists in new membership of channel mychannel
+[34m2025-03-19 09:17:59.073 UTC 008c INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> Node with ID 1 exists in new membership of channel mychannel
+[34m2025-03-19 09:17:59.073 UTC 008d INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> Node with ID 2 exists in new membership of channel mychannel
+[34m2025-03-19 09:17:59.073 UTC 008e INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> Node with ID 3 exists in new membership of channel mychannel
+[34m2025-03-19 09:17:59.073 UTC 008f INFO[0m [orderer.common.cluster] [34;1mConfigureNodeCerts[0m -> Updating nodes identity, channel: mychannel, nodes: [id:1 host:"orderer1.example.com" port:7051 msp_id:"OrdererMSP" identity:"-----BEGIN CERTIFICATE-----\nMIICHjCCAcWgAwIBAgIQU/QipR5TSVQkTmhYsG4+PDAKBggqhkjOPQQDAjBpMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xFzAVBgNVBAMTDmNhLmV4YW1w\nbGUuY29tMB4XDTI1MDMxOTA5MDgwMFoXDTM1MDMxNzA5MDgwMFowazELMAkGA1UE\nBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lz\nY28xEDAOBgNVBAsTB29yZGVyZXIxHTAbBgNVBAMTFG9yZGVyZXIxLmV4YW1wbGUu\nY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEMvtIMnFqAiO61E/6tQ1G9Njl\nSeUJx+BwXF2RPzL1g+Azjx58JoZCC2pEBxNd++rSHDCsPAsYPp1PWHB9MxPD76NN\nMEswDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgOgty\nwV7zpJLwo6VSRU8KmWh7c4ocIxV9ox49tFnUm4IwCgYIKoZIzj0EAwIDRwAwRAIg\nZAHithzMJ6hk5/msAZntYpToONx20Dpulaa1jKDd3jkCIAOlRkaaa9QkA225kBIV\n3I5uLz0U9tbr7hiMDC3JRG8t\n-----END CERTIFICATE-----\n" client_tls_cert:"-----BEGIN CERTIFICATE-----\nMIICaDCCAg6gAwIBAgIRAJ/t5RheXN6dHjVthGoF9vUwCgYIKoZIzj0EAwIwbDEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l\neGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ\nBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh\nbmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMS5leGFtcGxlLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABADWLzjrgLm9gV0WwoX+eLCB+76ECyr20CEoO+2NrpV0\nq9OsndwAFiQ1KsO+VcIkSG81RSuCr5Q0+pxiN89qlxmjgaMwgaAwDgYDVR0PAQH/\nBAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E\nAjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo\nMDQGA1UdEQQtMCuCFG9yZGVyZXIxLmV4YW1wbGUuY29tgghvcmRlcmVyMYIJbG9j\nYWxob3N0MAoGCCqGSM49BAMCA0gAMEUCIQD8q2u3aO39xPCCAJ0W+KLhFSx6x2xp\nTqp7H/2GWDB2LgIgfEqt+n9HSjqnVfcCuXnZJ1UN2H0/Rpa60T320M/so90=\n-----END CERTIFICATE-----\n" server_tls_cert:"-----BEGIN CERTIFICATE-----\nMIICaDCCAg6gAwIBAgIRAJ/t5RheXN6dHjVthGoF9vUwCgYIKoZIzj0EAwIwbDEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l\neGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ\nBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh\nbmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMS5leGFtcGxlLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABADWLzjrgLm9gV0WwoX+eLCB+76ECyr20CEoO+2NrpV0\nq9OsndwAFiQ1KsO+VcIkSG81RSuCr5Q0+pxiN89qlxmjgaMwgaAwDgYDVR0PAQH/\nBAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E\nAjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo\nMDQGA1UdEQQtMCuCFG9yZGVyZXIxLmV4YW1wbGUuY29tgghvcmRlcmVyMYIJbG9j\nYWxob3N0MAoGCCqGSM49BAMCA0gAMEUCIQD8q2u3aO39xPCCAJ0W+KLhFSx6x2xp\nTqp7H/2GWDB2LgIgfEqt+n9HSjqnVfcCuXnZJ1UN2H0/Rpa60T320M/so90=\n-----END CERTIFICATE-----\n" id:2 host:"orderer2.example.com" port:7052 msp_id:"OrdererMSP" identity:"-----BEGIN CERTIFICATE-----\nMIICHjCCAcWgAwIBAgIQJaSyb2fyQ/fp52LFGtNaIjAKBggqhkjOPQQDAjBpMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xFzAVBgNVBAMTDmNhLmV4YW1w\nbGUuY29tMB4XDTI1MDMxOTA5MDgwMFoXDTM1MDMxNzA5MDgwMFowazELMAkGA1UE\nBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lz\nY28xEDAOBgNVBAsTB29yZGVyZXIxHTAbBgNVBAMTFG9yZGVyZXIyLmV4YW1wbGUu\nY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/HhEt0JU17nc6OiPNE4d1cxN\nGRcx/Oyulvn/6CNDAgPzLoH6DtJydXReL4AOpYVU8yf+MQrDbumS20hplr3H0KNN\nMEswDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgOgty\nwV7zpJLwo6VSRU8KmWh7c4ocIxV9ox49tFnUm4IwCgYIKoZIzj0EAwIDRwAwRAIg\nRcxR8XP9bWuck4SKPPu5bc5LVlU+g4VxQIyfapIynf0CIGsB6KE2sLaaZ69zXpfx\nTjNsIx3YEKbic4f6qjJgXKmF\n-----END CERTIFICATE-----\n" client_tls_cert:"-----BEGIN CERTIFICATE-----\nMIICaDCCAg6gAwIBAgIRAIC4vkzc7CCcdmAft0wt8egwCgYIKoZIzj0EAwIwbDEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l\neGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ\nBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh\nbmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMi5leGFtcGxlLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABKjj8L5RysJk6JIcj2qcuTZoT+PZu6F4WyW0U715yLY0\nflhOCCQLqLBZphd0N6Dba9aDfSkr6J4k9wCZAkja9UqjgaMwgaAwDgYDVR0PAQH/\nBAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E\nAjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo\nMDQGA1UdEQQtMCuCFG9yZGVyZXIyLmV4YW1wbGUuY29tgghvcmRlcmVyMoIJbG9j\nYWxob3N0MAoGCCqGSM49BAMCA0gAMEUCIQDpa+zBeZnYRFRueZRbvUJMQJq5PQNY\now3xu6AU1xSyhAIgVwiz1NCEbGxFqZDC6GEaf5SYNnNNPX4Te5KOwHwpz3k=\n-----END CERTIFICATE-----\n" server_tls_cert:"-----BEGIN CERTIFICATE-----\nMIICaDCCAg6gAwIBAgIRAIC4vkzc7CCcdmAft0wt8egwCgYIKoZIzj0EAwIwbDEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l\neGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ\nBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh\nbmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMi5leGFtcGxlLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABKjj8L5RysJk6JIcj2qcuTZoT+PZu6F4WyW0U715yLY0\nflhOCCQLqLBZphd0N6Dba9aDfSkr6J4k9wCZAkja9UqjgaMwgaAwDgYDVR0PAQH/\nBAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E\nAjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo\nMDQGA1UdEQQtMCuCFG9yZGVyZXIyLmV4YW1wbGUuY29tgghvcmRlcmVyMoIJbG9j\nYWxob3N0MAoGCCqGSM49BAMCA0gAMEUCIQDpa+zBeZnYRFRueZRbvUJMQJq5PQNY\now3xu6AU1xSyhAIgVwiz1NCEbGxFqZDC6GEaf5SYNnNNPX4Te5KOwHwpz3k=\n-----END CERTIFICATE-----\n" id:3 host:"orderer3.example.com" port:7053 msp_id:"OrdererMSP" identity:"-----BEGIN CERTIFICATE-----\nMIICIDCCAcagAwIBAgIRALy8Yae9gTG6pPHoOSRwlhMwCgYIKoZIzj0EAwIwaTEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRcwFQYDVQQDEw5jYS5leGFt\ncGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMGsxCzAJBgNV\nBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJhbmNp\nc2NvMRAwDgYDVQQLEwdvcmRlcmVyMR0wGwYDVQQDExRvcmRlcmVyMy5leGFtcGxl\nLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABHdA0seFXGyBigPQtzkT8j/Q\n46fPkk7bwhGH8wv5jX/Gv9KsoiYUsWXqvVsSsz/lxyGmX68ttHmJEflgykXPtwyj\nTTBLMA4GA1UdDwEB/wQEAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIDoL\ncsFe86SS8KOlUkVPCploe3OKHCMVfaMePbRZ1JuCMAoGCCqGSM49BAMCA0gAMEUC\nIQDUAtS7icz0tJ0ISHZDzQhQsM+MXrkiRACgCEZUwBiOUwIgBuvpfaqTTBai+dk8\nNQBNz1MfQnMMD5JILLJ4RBobXSA=\n-----END CERTIFICATE-----\n" client_tls_cert:"-----BEGIN CERTIFICATE-----\nMIICZzCCAg2gAwIBAgIQFC41kXqgfh+1JuxvltyjVzAKBggqhkjOPQQDAjBsMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xGjAYBgNVBAMTEXRsc2NhLmV4\nYW1wbGUuY29tMB4XDTI1MDMxOTA5MDgwMFoXDTM1MDMxNzA5MDgwMFowWTELMAkG\nA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFu\nY2lzY28xHTAbBgNVBAMTFG9yZGVyZXIzLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0C\nAQYIKoZIzj0DAQcDQgAE5V1bIv2dgS3zPGxkL61lfpqIcgxLCv8CQlv8TtHJdPjr\nmjyCjnOjaKiznHVknlxxOmfyhZA/xMTLDY7IZqHGv6OBozCBoDAOBgNVHQ8BAf8E\nBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQC\nMAAwKwYDVR0jBCQwIoAgHk6p2OjJYHE5aAZtpo6mUIVhsFTmellnLfGlY2AFWigw\nNAYDVR0RBC0wK4IUb3JkZXJlcjMuZXhhbXBsZS5jb22CCG9yZGVyZXIzgglsb2Nh\nbGhvc3QwCgYIKoZIzj0EAwIDSAAwRQIhAIBrgMVuLkOzl7K3UqOt0C9/LKCu56rz\ngp3gkN5OyktNAiBYaXTNgohkdxJWBPXnr0m++qcbbMi9sbEXS3HbWuE/UA==\n-----END CERTIFICATE-----\n" server_tls_cert:"-----BEGIN CERTIFICATE-----\nMIICZzCCAg2gAwIBAgIQFC41kXqgfh+1JuxvltyjVzAKBggqhkjOPQQDAjBsMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xGjAYBgNVBAMTEXRsc2NhLmV4\nYW1wbGUuY29tMB4XDTI1MDMxOTA5MDgwMFoXDTM1MDMxNzA5MDgwMFowWTELMAkG\nA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFu\nY2lzY28xHTAbBgNVBAMTFG9yZGVyZXIzLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0C\nAQYIKoZIzj0DAQcDQgAE5V1bIv2dgS3zPGxkL61lfpqIcgxLCv8CQlv8TtHJdPjr\nmjyCjnOjaKiznHVknlxxOmfyhZA/xMTLDY7IZqHGv6OBozCBoDAOBgNVHQ8BAf8E\nBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQC\nMAAwKwYDVR0jBCQwIoAgHk6p2OjJYHE5aAZtpo6mUIVhsFTmellnLfGlY2AFWigw\nNAYDVR0RBC0wK4IUb3JkZXJlcjMuZXhhbXBsZS5jb22CCG9yZGVyZXIzgglsb2Nh\nbGhvc3QwCgYIKoZIzj0EAwIDSAAwRQIhAIBrgMVuLkOzl7K3UqOt0C9/LKCu56rz\ngp3gkN5OyktNAiBYaXTNgohkdxJWBPXnr0m++qcbbMi9sbEXS3HbWuE/UA==\n-----END CERTIFICATE-----\n" id:4 host:"orderer4.example.com" port:7054 msp_id:"OrdererMSP" identity:"-----BEGIN CERTIFICATE-----\nMIICHjCCAcWgAwIBAgIQb2iQ6TCtjk3VpIjkqTYJTzAKBggqhkjOPQQDAjBpMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xFzAVBgNVBAMTDmNhLmV4YW1w\nbGUuY29tMB4XDTI1MDMxOTA5MDgwMFoXDTM1MDMxNzA5MDgwMFowazELMAkGA1UE\nBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lz\nY28xEDAOBgNVBAsTB29yZGVyZXIxHTAbBgNVBAMTFG9yZGVyZXI0LmV4YW1wbGUu\nY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE3F7dMxIN9KGjE6UVEwnz5Ot+\nX1AEw0V9QKMx/DxNvEP6+dnIuH4DKEtELKnaTTtCSy1ChBzno+P5x70DJ6oyVqNN\nMEswDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgOgty\nwV7zpJLwo6VSRU8KmWh7c4ocIxV9ox49tFnUm4IwCgYIKoZIzj0EAwIDRwAwRAIg\nAbs/fLRI1SyNAINngvuUCaBN4UeDLZpBN40m6dGKUAwCIDso6FVb4FR83ny0C01A\n6BwkP70EmJzdZMqK8EJ0NdKJ\n-----END CERTIFICATE-----\n" client_tls_cert:"-----BEGIN CERTIFICATE-----\nMIICZzCCAg6gAwIBAgIRAIPdcFBsXuWo+8NfRa+z+WYwCgYIKoZIzj0EAwIwbDEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l\neGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ\nBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh\nbmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyNC5leGFtcGxlLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABBM4BgeChxQIujye8a6TUWNgLYUpRAipG0L1MD9SaUW3\n+DVZUarIU5TLQs5qFoVyIphckouGi/Gh7UsPeLtSITWjgaMwgaAwDgYDVR0PAQH/\nBAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E\nAjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo\nMDQGA1UdEQQtMCuCFG9yZGVyZXI0LmV4YW1wbGUuY29tgghvcmRlcmVyNIIJbG9j\nYWxob3N0MAoGCCqGSM49BAMCA0cAMEQCICfdncFX6QPvHROcPFvNgbvxANfmSTmG\nJR0okJOMH8nbAiB0LKEHFinrlSMpiZGih5tbVLOI1Ev3sCKNEuM3i5cfYA==\n-----END CERTIFICATE-----\n" server_tls_cert:"-----BEGIN CERTIFICATE-----\nMIICZzCCAg6gAwIBAgIRAIPdcFBsXuWo+8NfRa+z+WYwCgYIKoZIzj0EAwIwbDEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l\neGFtcGxlLmNvbTAeFw0yNTAzMTkwOTA4MDBaFw0zNTAzMTcwOTA4MDBaMFkxCzAJ\nBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh\nbmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyNC5leGFtcGxlLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABBM4BgeChxQIujye8a6TUWNgLYUpRAipG0L1MD9SaUW3\n+DVZUarIU5TLQs5qFoVyIphckouGi/Gh7UsPeLtSITWjgaMwgaAwDgYDVR0PAQH/\nBAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E\nAjAAMCsGA1UdIwQkMCKAIB5OqdjoyWBxOWgGbaaOplCFYbBU5npZZy3xpWNgBVoo\nMDQGA1UdEQQtMCuCFG9yZGVyZXI0LmV4YW1wbGUuY29tgghvcmRlcmVyNIIJbG9j\nYWxob3N0MAoGCCqGSM49BAMCA0cAMEQCICfdncFX6QPvHROcPFvNgbvxANfmSTmG\nJR0okJOMH8nbAiB0LKEHFinrlSMpiZGih5tbVLOI1Ev3sCKNEuM3i5cfYA==\n-----END CERTIFICATE-----\n"]
+[34m2025-03-19 09:17:59.074 UTC 0090 INFO[0m [orderer.consensus.smartbft] [34;1mverifyConfigUpdateMsg[0m -> Applying filters for config update of type CONFIG to channel mychannel
+[31m2025-03-19 09:17:59.075 UTC 0091 ERRO[0m [orderer.consensus.smartbft] [31;1mverifyConfigUpdateMsg[0m -> Rejecting config proposal due to error authorizing update: error validating ReadSet: proposed update requires that key [Group]  /Channel/Application/Org1MSP be at version 0, but it is currently at version 1
+[31m2025-03-19 09:17:59.075 UTC 0092 ERRO[0m [orderer.consensus.smartbft.verifier] [31;1mverifyRequest[0m -> Error verifying config update: error authorizing update: error validating ReadSet: proposed update requires that key [Group]  /Channel/Application/Org1MSP be at version 0, but it is currently at version 1 channel=mychannel
+[34m2025-03-19 09:17:59.075 UTC 0093 INFO[0m [orderer.consensus.smartbft.consensus] [34;1mdeleteRequest[0m -> Removed request {ef152b5f67b27ee430416e22d2b45941be0d5020e67c0a2f86a0a8bafb13e9ef 9b7cdd670f8a249e52f41547266318609be941d2bc2075cab98badc07bd68607} from request pool channel=mychannel
+[34m2025-03-19 09:17:59.075 UTC 0094 INFO[0m [orderer.consensus.smartbft.consensus] [34;1mMaybePruneRevokedRequests[0m -> Verification sequence changed: 0 --> 1 channel=mychannel
+[34m2025-03-19 09:18:55.189 UTC 0095 INFO[0m [orderer.consensus.smartbft.consensus] [34;1mmetadataWithUpdatedBlacklist[0m -> Skipping updating blacklist due to verification sequence changing from 0 to 1 channel=mychannel
+[34m2025-03-19 09:18:55.190 UTC 0096 INFO[0m [orderer.consensus.smartbft.consensus] [34;1mverifyPrevCommitSignatures[0m -> Skipping verifying prev commit signatures due to verification sequence advancing from 0 to 1 channel=mychannel
+[34m2025-03-19 09:18:55.192 UTC 0097 INFO[0m [orderer.consensus.smartbft.consensus] [34;1mprocessProposal[0m -> Processed proposal with seq 2 channel=mychannel
+[34m2025-03-19 09:18:55.195 UTC 0098 INFO[0m [orderer.consensus.smartbft.consensus] [34;1mprocessPrepares[0m -> 1 collected 2 prepares from [3 4] channel=mychannel
+[34m2025-03-19 09:18:55.197 UTC 0099 INFO[0m [orderer.consensus.smartbft.consensus] [34;1mprocessPrepares[0m -> Processed prepares for proposal with seq 2 channel=mychannel
+[34m2025-03-19 09:18:55.199 UTC 009a INFO[0m [orderer.consensus.smartbft.consensus] [34;1mprocessCommits[0m -> 1 collected 2 commits from [4 3] channel=mychannel
+[34m2025-03-19 09:18:55.199 UTC 009b INFO[0m [orderer.consensus.smartbft.consensus] [34;1mprepared[0m -> 1 processed commits for proposal with seq 2 channel=mychannel
+[34m2025-03-19 09:18:55.199 UTC 009c INFO[0m [orderer.consensus.smartbft.consensus] [34;1mdecide[0m -> Deciding on seq 2 channel=mychannel
+[34m2025-03-19 09:18:55.199 UTC 009d INFO[0m [orderer.consensus.smartbft.consensus] [34;1mstartNextSeq[0m -> Sequence: 2-->3 channel=mychannel
+[34m2025-03-19 09:18:55.199 UTC 009e INFO[0m [orderer.consensus.smartbft.chain] [34;1mDeliver[0m -> Delivering proposal, writing block 2 with 1 transactions and metadata of total size 330 with signatures from [4 3 1] to the ledger, node id 1 channel=mychannel
+[34m2025-03-19 09:18:55.199 UTC 009f INFO[0m [orderer.consensus.smartbft.consensus] [34;1mdeleteRequest[0m -> Removed request {ef152b5f67b27ee430416e22d2b45941be0d5020e67c0a2f86a0a8bafb13e9ef 060a44213cf09b1f803f5b0e0bc9aee2db2a1c7ed1693f02c31afd8c0e7f6409} from request pool channel=mychannel
+[34m2025-03-19 09:18:55.213 UTC 00a0 INFO[0m [grpc] [34;1mInfof[0m -> [transport] [server-transport 0xc0000da820] Closing: EOF
+[34m2025-03-19 09:18:55.213 UTC 00a1 INFO[0m [grpc] [34;1mInfof[0m -> [transport] [server-transport 0xc0000da820] loopyWriter exiting with error: transport closed by client
+[33m2025-03-19 09:18:55.213 UTC 00a2 WARN[0m [orderer.common.broadcast] [33;1mHandle[0m -> Error reading from 172.17.0.1:54198: rpc error: code = Canceled desc = context canceled
+[34m2025-03-19 09:18:55.213 UTC 00a3 INFO[0m [comm.grpc.server] [34;1mfunc1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Broadcast grpc.peer_address=172.17.0.1:54198 error="rpc error: code = Canceled desc = context canceled" grpc.code=Canceled grpc.call_duration=68.701612ms
+[34m2025-03-19 09:18:58.517 UTC 00a4 INFO[0m [orderer.consensus.smartbft.consensus] [34;1mprocessProposal[0m -> Processed proposal with seq 3 channel=mychannel
+[34m2025-03-19 09:18:58.520 UTC 00a5 INFO[0m [orderer.consensus.smartbft.consensus] [34;1mprocessPrepares[0m -> 1 collected 2 prepares from [4 3] channel=mychannel
+[34m2025-03-19 09:18:58.521 UTC 00a6 INFO[0m [orderer.consensus.smartbft.consensus] [34;1mprocessPrepares[0m -> Processed prepares for proposal with seq 3 channel=mychannel
+[34m2025-03-19 09:18:58.523 UTC 00a7 INFO[0m [orderer.consensus.smartbft.consensus] [34;1mprocessCommits[0m -> 1 collected 2 commits from [2 4] channel=mychannel
+[34m2025-03-19 09:18:58.523 UTC 00a8 INFO[0m [orderer.consensus.smartbft.consensus] [34;1mprepared[0m -> 1 processed commits for proposal with seq 3 channel=mychannel
+[34m2025-03-19 09:18:58.523 UTC 00a9 INFO[0m [orderer.consensus.smartbft.consensus] [34;1mdecide[0m -> Deciding on seq 3 channel=mychannel
+[34m2025-03-19 09:18:58.523 UTC 00aa INFO[0m [orderer.consensus.smartbft.consensus] [34;1mstartNextSeq[0m -> Sequence: 3-->4 channel=mychannel
+[34m2025-03-19 09:18:58.523 UTC 00ab INFO[0m [orderer.consensus.smartbft.chain] [34;1mDeliver[0m -> Delivering proposal, writing block 3 with 1 transactions and metadata of total size 328 with signatures from [2 4 1] to the ledger, node id 1 channel=mychannel
+[34m2025-03-19 09:18:58.523 UTC 00ac INFO[0m [orderer.consensus.smartbft.consensus] [34;1mdeleteRequest[0m -> Removed request {ef152b5f67b27ee430416e22d2b45941be0d5020e67c0a2f86a0a8bafb13e9ef 07bdba0969c891d7f05976c6d0f472242a24375f0ddce57beabd4642f5e35cb0} from request pool channel=mychannel
+[34m2025-03-19 09:18:58.634 UTC 00ad INFO[0m [grpc] [34;1mInfof[0m -> [transport] [server-transport 0xc0000da9c0] Closing: EOF
+[34m2025-03-19 09:18:58.634 UTC 00ae INFO[0m [grpc] [34;1mInfof[0m -> [transport] [server-transport 0xc0000da9c0] loopyWriter exiting with error: transport closed by client
+[33m2025-03-19 09:18:58.634 UTC 00af WARN[0m [orderer.common.broadcast] [33;1mHandle[0m -> Error reading from 172.17.0.1:54202: rpc error: code = Canceled desc = context canceled
+[34m2025-03-19 09:18:58.634 UTC 00b0 INFO[0m [comm.grpc.server] [34;1mfunc1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Broadcast grpc.peer_address=172.17.0.1:54202 error="rpc error: code = Canceled desc = context canceled" grpc.code=Canceled grpc.call_duration=138.202095ms

@@ -1,5 +1,7 @@
-172.17.0.6 orderer4.example.com
-172.17.0.3 peer0.org1.example.com
-172.17.0.5 orderer3.example.com
-172.17.0.7 orderer2.example.com
-172.17.0.4 orderer1.example.com
+192.168.0.26 orderer5.example.com
+192.168.0.6 orderer1.example.com
+192.168.0.14 orderer3.example.com
+192.168.0.22 orderer4.example.com
+192.168.0.18 peer0.org1.example.com
+192.168.0.34 orderer6.example.com
+192.168.0.10 orderer2.example.com

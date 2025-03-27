@@ -1,0 +1,291 @@
+<------------------------------------->
+            enter ctl+c exit           
+<------------------------------------->
+start frr
+watchfrr[35]: [T83RR-8SM5G] watchfrr 8.1 starting: vty@0
+watchfrr[35]: [ZCJ3S-SPH5S] zebra state -> down : initial connection attempt failed
+watchfrr[35]: [ZCJ3S-SPH5S] bgpd state -> down : initial connection attempt failed
+watchfrr[35]: [ZCJ3S-SPH5S] ospfd state -> down : initial connection attempt failed
+watchfrr[35]: [ZCJ3S-SPH5S] ospf6d state -> down : initial connection attempt failed
+watchfrr[35]: [ZCJ3S-SPH5S] isisd state -> down : initial connection attempt failed
+watchfrr[35]: [ZCJ3S-SPH5S] staticd state -> down : initial connection attempt failed
+watchfrr[35]: [YFT0P-5Q5YX] Forked background command [pid 36]: /usr/lib/frr/watchfrr.sh restart all
+watchfrr[35]: [QDG3Y-BY5TN] bgpd state -> up : connect succeeded
+watchfrr[35]: [QDG3Y-BY5TN] zebra state -> up : connect succeeded
+watchfrr[35]: [YFT0P-5Q5YX] Forked background command [pid 72]: /usr/lib/frr/watchfrr.sh restart staticd
+watchfrr[35]: [YFT0P-5Q5YX] Forked background command [pid 80]: /usr/lib/frr/watchfrr.sh restart ospf6d
+watchfrr[35]: [QDG3Y-BY5TN] ospf6d state -> up : connect succeeded
+watchfrr[35]: [QDG3Y-BY5TN] isisd state -> up : connect succeeded
+watchfrr[35]: [QDG3Y-BY5TN] ospfd state -> up : connect succeeded
+watchfrr[35]: [QDG3Y-BY5TN] staticd state -> up : connect succeeded
+watchfrr[35]: [KWE5Q-QNGFC] all daemons up, doing startup-complete notify
+ * Started watchfrr
+
+watchfrr[35]: [RKHTV-CNGEG] Daemon: zebra: is in Up state but expected it to be in DAEMON_DOWN state
+watchfrr[35]: [RKHTV-CNGEG] Daemon: bgpd: is in Up state but expected it to be in DAEMON_DOWN state
+watchfrr[35]: [RKHTV-CNGEG] Daemon: ospfd: is in Up state but expected it to be in DAEMON_DOWN state
+watchfrr[35]: [RKHTV-CNGEG] Daemon: ospf6d: is in Up state but expected it to be in DAEMON_DOWN state
+watchfrr[35]: [RKHTV-CNGEG] Daemon: isisd: is in Up state but expected it to be in DAEMON_DOWN state
+watchfrr[35]: [RKHTV-CNGEG] Daemon: staticd: is in Up state but expected it to be in DAEMON_DOWN state
+watchfrr[35]: [RKHTV-CNGEG] Daemon: staticd: is in Up state but expected it to be in DAEMON_DOWN state
+[34m2025-03-19 09:14:20.071 UTC 0001 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer:
+ Version: 3.0.0
+ Commit SHA: 73c2273
+ Go version: go1.23.2
+ OS/Arch: linux/amd64
+ Chaincode:
+  Base Docker Label: org.hyperledger.fabric
+  Docker Namespace: hyperledger
+[34m2025-03-19 09:14:20.125 UTC 0002 INFO[0m [nodeCmd] [34;1mserve[0m -> Peer config with combined core.yaml settings and environment variable overrides:
+chaincode:
+    builder: $(DOCKER_NS)/fabric-ccenv:$(TWO_DIGIT_VERSION)
+    executetimeout: 300s
+    externalbuilders:
+        - name: ccaas_builder
+          path: /opt/hyperledger/ccaas_builder
+          propagateenvironment:
+            - CHAINCODE_AS_A_SERVICE_BUILDER_CONFIG
+    golang:
+        dynamiclink: false
+        runtime: $(DOCKER_NS)/fabric-baseos:$(TWO_DIGIT_VERSION)
+    installtimeout: 300s
+    java:
+        runtime: $(DOCKER_NS)/fabric-javaenv:$(TWO_DIGIT_VERSION)
+    keepalive: 0
+    logging:
+        format: '%{color}%{time:2006-01-02 15:04:05.000 MST} [%{module}] %{shortfunc} -> %{level:.4s} %{id:03x}%{color:reset} %{message}'
+        level: info
+        shim: warning
+    mode: net
+    node:
+        runtime: $(DOCKER_NS)/fabric-nodeenv:$(TWO_DIGIT_VERSION)
+    pull: false
+    startuptimeout: 300s
+    system:
+        _lifecycle: enable
+        cscc: enable
+        lscc: enable
+        qscc: enable
+ledger:
+    history:
+        enablehistorydatabase: true
+    pvtdatastore:
+        collelgprocdbbatchesinterval: 1000
+        collelgprocmaxdbbatchsize: 5000
+        deprioritizeddatareconcilerinterval: 60m
+    snapshots:
+        rootdir: /var/hyperledger/production/snapshots
+    state:
+        couchdbconfig:
+            cachesize: 64
+            couchdbaddress: 127.0.0.1:5984
+            createglobalchangesdb: false
+            internalquerylimit: 1000
+            maxbatchupdatesize: 1000
+            maxretries: 3
+            maxretriesonstartup: 10
+            requesttimeout: 35s
+        statedatabase: goleveldb
+        totalquerylimit: 100000
+logging_level: ""
+metrics:
+    provider: prometheus
+    statsd:
+        address: 127.0.0.1:8125
+        network: udp
+        writeinterval: 10s
+operations:
+    listenaddress: peer0.org1.example.com:6051
+    tls:
+        clientauthrequired: false
+        clientrootcas:
+            files: []
+        enabled: false
+peer:
+    address: peer0.org1.example.com:5051
+    addressautodetect: false
+    authentication:
+        timewindow: 15m
+    bccsp:
+        default: SW
+        sw:
+            hash: SHA2
+            security: 256
+    client:
+        conntimeout: 3s
+    deliveryclient:
+        blockgossipenabled: true
+        conntimeout: 3s
+        reconnectbackoffthreshold: 3600s
+        reconnecttotaltimethreshold: 3600s
+    discovery:
+        authcacheenabled: true
+        authcachemaxsize: 1000
+        authcachepurgeretentionratio: 0.75
+        enabled: true
+        orgmembersallowedaccess: false
+    filesystempath: /var/hyperledger/production
+    gateway:
+        dialtimeout: 2m
+        enabled: true
+        endorsementtimeout: 30s
+    gossip:
+        aliveexpirationtimeout: 25s
+        alivetimeinterval: 5s
+        bootstrap: peer0.org1.example.com:5051
+        conntimeout: 2s
+        dialtimeout: 3s
+        digestwaittime: 1s
+        election:
+            leaderalivethreshold: 10s
+            leaderelectionduration: 5s
+            membershipsampleinterval: 1s
+            startupgraceperiod: 15s
+        externalendpoint: peer0.org1.example.com:5051
+        maxblockcounttostore: 10
+        maxconnectionattempts: 120
+        maxpropagationburstlatency: 10ms
+        maxpropagationburstsize: 10
+        membershiptrackerinterval: 5s
+        msgexpirationfactor: 20
+        orgleader: true
+        propagateiterations: 1
+        propagatepeernum: 3
+        publishcertperiod: 10s
+        publishstateinfointerval: 4s
+        pullinterval: 4s
+        pullpeernum: 3
+        pvtdata:
+            btlpullmargin: 10
+            implicitcollectiondisseminationpolicy:
+                maxpeercount: 1
+                requiredpeercount: 0
+            pullretrythreshold: 60s
+            pushacktimeout: 3s
+            reconcilebatchsize: 10
+            reconcilesleepinterval: 1m
+            reconciliationenabled: true
+            skippullinginvalidtransactionsduringcommit: false
+            transientstoremaxblockretention: 1000
+        reconnectinterval: 25s
+        recvbuffsize: 20
+        requeststateinfointerval: 4s
+        requestwaittime: 1500ms
+        responsewaittime: 2s
+        sendbuffsize: 200
+        skipblockverification: false
+        state:
+            batchsize: 10
+            blockbuffersize: 20
+            checkinterval: 10s
+            enabled: false
+            maxretries: 3
+            responsetimeout: 3s
+        useleaderelection: false
+    handlers:
+        authfilters:
+            - name: DefaultAuth
+            - name: ExpirationCheck
+        decorators:
+            - name: DefaultDecorator
+        endorsers:
+            escc:
+                name: DefaultEndorsement
+        validators:
+            vscc:
+                name: DefaultValidation
+    id: peer0.org1.example.com
+    keepalive:
+        client:
+            interval: 60s
+            timeout: 20s
+        deliveryclient:
+            interval: 60s
+            timeout: 20s
+        interval: 7200s
+        mininterval: 60s
+        timeout: 20s
+    limits:
+        concurrency:
+            deliverservice: 2500
+            endorserservice: 2500
+    listenaddress: 0.0.0.0:5051
+    localmspid: Org1MSP
+    localmsptype: bccsp
+    maxrecvmsgsize: 104857600
+    maxsendmsgsize: 104857600
+    mspconfigpath: /etc/hyperledger/fabric/msp
+    networkid: dev
+    profile:
+        enabled: "false"
+        listenaddress: 0.0.0.0:6060
+    tls:
+        cert:
+            file: /etc/hyperledger/fabric/tls/server.crt
+        clientauthrequired: false
+        clientrootcas:
+            files:
+                - tls/ca.crt
+        enabled: "true"
+        key:
+            file: /etc/hyperledger/fabric/tls/server.key
+        rootcert:
+            file: /etc/hyperledger/fabric/tls/ca.crt
+vm:
+    docker:
+        attachstdout: false
+        hostconfig:
+            logconfig:
+                config:
+                    max-file: "5"
+                    max-size: 50m
+                type: json-file
+            memory: 2147483648
+            networkmode: host
+        tls:
+            ca:
+                file: docker/ca.crt
+            cert:
+                file: docker/tls.crt
+            enabled: false
+            key:
+                file: docker/tls.key
+    endpoint: unix:///host/var/run/docker.sock
+[34m2025-03-19 09:14:20.125 UTC 0003 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Auto-detected peer address: 192.168.0.14:5051
+[34m2025-03-19 09:14:20.125 UTC 0004 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Returning peer0.org1.example.com:5051
+[34m2025-03-19 09:14:20.165 UTC 0005 INFO[0m [nodeCmd] [34;1minitGrpcSemaphores[0m -> concurrency limit for endorser service is 2500
+[34m2025-03-19 09:14:20.165 UTC 0006 INFO[0m [nodeCmd] [34;1minitGrpcSemaphores[0m -> concurrency limit for deliver service is 2500
+[34m2025-03-19 09:14:20.165 UTC 0007 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with TLS enabled
+[34m2025-03-19 09:14:20.178 UTC 0008 INFO[0m [deliveryClient] [34;1mloadDeliverServiceConfig[0m -> peer.deliveryclient.blockCensorshipTimeoutKey is not set, defaulting to 30000000000 s.
+[34m2025-03-19 09:14:20.178 UTC 0009 INFO[0m [deliveryClient] [34;1mloadDeliverServiceConfig[0m -> peer.deliveryclient.minimalReconnectInterval is not set, defaulting to 100000000 ms.
+[34m2025-03-19 09:14:20.178 UTC 000a INFO[0m [deliveryClient] [34;1mloadDeliverServiceConfig[0m -> peer.deliveryclient.policy is not set, defaulting to cluster.
+[34m2025-03-19 09:14:20.178 UTC 000b INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The enrollment certificate will expire on 2035-03-17 09:08:00 +0000 UTC
+[34m2025-03-19 09:14:20.179 UTC 000c INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The server TLS certificate will expire on 2035-03-17 09:08:00 +0000 UTC
+[34m2025-03-19 09:14:20.179 UTC 000d INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initializing LedgerMgr
+[34m2025-03-19 09:14:20.188 UTC 000e INFO[0m [leveldbhelper] [34;1mopenDBAndCheckFormat[0m -> DB is empty Setting db format as 2.0
+[34m2025-03-19 09:14:20.189 UTC 000f INFO[0m [blkstorage] [34;1mNewProvider[0m -> Creating new file ledger directory at /var/hyperledger/production/ledgersData/chains/chains
+[34m2025-03-19 09:14:20.196 UTC 0010 INFO[0m [leveldbhelper] [34;1mopenDBAndCheckFormat[0m -> DB is empty Setting db format as 2.5
+[34m2025-03-19 09:14:20.200 UTC 0011 INFO[0m [leveldbhelper] [34;1mopenDBAndCheckFormat[0m -> DB is empty Setting db format as 2.0
+[34m2025-03-19 09:14:20.209 UTC 0012 INFO[0m [leveldbhelper] [34;1mopenDBAndCheckFormat[0m -> DB is empty Setting db format as 2.0
+[34m2025-03-19 09:14:20.210 UTC 0013 INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initialized LedgerMgr
+[34m2025-03-19 09:14:20.210 UTC 0014 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Server #1]Server created
+[34m2025-03-19 09:14:20.235 UTC 0015 INFO[0m [gossip.service] [34;1mNew[0m -> Initialize gossip with endpoint peer0.org1.example.com:5051
+[34m2025-03-19 09:14:20.250 UTC 0016 INFO[0m [gossip.gossip] [34;1mNew[0m -> Creating gossip service with self membership of Endpoint: peer0.org1.example.com:5051, InternalEndpoint: peer0.org1.example.com:5051, PKI-ID: 34f4061f8658e384ac33e0245807bcffc16cef7d7d805889bb53462a3393474d, Metadata: 
+[34m2025-03-19 09:14:20.251 UTC 0017 INFO[0m [lifecycle] [34;1mInitializeLocalChaincodes[0m -> Initialized lifecycle cache with 0 already installed chaincodes
+[34m2025-03-19 09:14:20.252 UTC 0018 INFO[0m [gossip.gossip] [34;1mstart[0m -> Gossip instance peer0.org1.example.com:5051 started
+[34m2025-03-19 09:14:20.253 UTC 0019 INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Entering computeChaincodeEndpoint with peerHostname: peer0.org1.example.com
+[34m2025-03-19 09:14:20.254 UTC 001a INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Exit with ccEndpoint: peer0.org1.example.com:5551
+[34m2025-03-19 09:14:20.254 UTC 001b INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Server #2]Server created
+[34m2025-03-19 09:14:20.256 UTC 001c INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'cscc'
+[34m2025-03-19 09:14:20.256 UTC 001d INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Server #2 ListenSocket #3]ListenSocket created
+[34m2025-03-19 09:14:20.256 UTC 001e INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'qscc'
+[34m2025-03-19 09:14:20.256 UTC 001f INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode '_lifecycle'
+[34m2025-03-19 09:14:20.256 UTC 0020 INFO[0m [nodeCmd] [34;1mserve[0m -> Deployed system chaincodes
+[34m2025-03-19 09:14:20.256 UTC 0021 INFO[0m [discovery] [34;1mNewService[0m -> Created with config TLS: true, authCacheMaxSize: 1000, authCachePurgeRatio: 0.750000
+[34m2025-03-19 09:14:20.256 UTC 0022 INFO[0m [nodeCmd] [34;1mserve[0m -> Discovery service activated
+[34m2025-03-19 09:14:20.256 UTC 0023 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with ID=[peer0.org1.example.com], network ID=[dev], address=[peer0.org1.example.com:5051]
+[34m2025-03-19 09:14:20.257 UTC 0024 INFO[0m [nodeCmd] [34;1mserve[0m -> Started peer with ID=[peer0.org1.example.com], network ID=[dev], address=[peer0.org1.example.com:5051]
+[34m2025-03-19 09:14:20.257 UTC 0025 INFO[0m [kvledger] [34;1mLoadPreResetHeight[0m -> Loading prereset height from path [/var/hyperledger/production/ledgersData/chains]
+[34m2025-03-19 09:14:20.257 UTC 0026 INFO[0m [blkstorage] [34;1mpreResetHtFiles[0m -> No active channels passed
+[34m2025-03-19 09:14:20.257 UTC 0027 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with Gateway enabled
+[34m2025-03-19 09:14:20.257 UTC 0028 INFO[0m [grpc] [34;1mAddTraceEvent[0m -> [core] [Server #1 ListenSocket #4]ListenSocket created

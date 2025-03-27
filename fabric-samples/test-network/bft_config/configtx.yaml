@@ -19,6 +19,8 @@ Organizations:
       - orderer2.example.com:7052
       - orderer3.example.com:7053
       - orderer4.example.com:7054
+      - orderer5.example.com:7055
+      - orderer6.example.com:7056
   - &Org1
     Name: Org1MSP
     ID: Org1MSP
@@ -148,6 +150,20 @@ Profiles:
           Identity: ../organizations/ordererOrganizations/example.com/orderers/orderer4.example.com/msp/signcerts/orderer4.example.com-cert.pem
           ClientTLSCert: ../organizations/ordererOrganizations/example.com/orderers/orderer4.example.com/tls/server.crt
           ServerTLSCert: ../organizations/ordererOrganizations/example.com/orderers/orderer4.example.com/tls/server.crt
+        - ID: 5
+          Host: orderer5.example.com
+          Port: 7055
+          MSPID: OrdererMSP
+          Identity: ../organizations/ordererOrganizations/example.com/orderers/orderer5.example.com/msp/signcerts/orderer5.example.com-cert.pem
+          ClientTLSCert: ../organizations/ordererOrganizations/example.com/orderers/orderer5.example.com/tls/server.crt
+          ServerTLSCert: ../organizations/ordererOrganizations/example.com/orderers/orderer5.example.com/tls/server.crt
+        - ID: 6
+          Host: orderer6.example.com
+          Port: 7056
+          MSPID: OrdererMSP
+          Identity: ../organizations/ordererOrganizations/example.com/orderers/orderer6.example.com/msp/signcerts/orderer6.example.com-cert.pem
+          ClientTLSCert: ../organizations/ordererOrganizations/example.com/orderers/orderer6.example.com/tls/server.crt
+          ServerTLSCert: ../organizations/ordererOrganizations/example.com/orderers/orderer6.example.com/tls/server.crt
     Application:
       <<: *ApplicationDefaults
       Organizations:

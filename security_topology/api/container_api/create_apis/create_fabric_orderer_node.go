@@ -11,6 +11,8 @@ import (
 
 	"github.com/docker/go-connections/nat"
 
+	"strings"
+
 	"github.com/docker/docker/api/types/container"
 	docker "github.com/docker/docker/client"
 )
@@ -41,8 +43,6 @@ func CreateFabricOrdererNode(client *docker.Client, fabricOrdererNode *nodes.Fab
 		"net.ipv6.seg6_flowlabel":                "1",
 	}
 	// 3. 获取配置
-	// simulationDir := configs.TopConfiguration.PathConfig.ConfigGeneratePath
-	// nodeDir := filepath.Join(simulationDir, fabricPeerNode.ContainerName)
 	var cpuLimit float64
 	var memoryLimit float64
 	enableFrr := configs.TopConfiguration.NetworkConfig.EnableFrr
@@ -54,14 +54,13 @@ func CreateFabricOrdererNode(client *docker.Client, fabricOrdererNode *nodes.Fab
 	orderRpcStartPort := configs.TopConfiguration.FabricConfig.OrderRpcStartPort + fabricOrdererNode.Id
 	simulationDir := configs.TopConfiguration.PathConfig.ConfigGeneratePath
 	nodeDir := filepath.Join(simulationDir, fabricOrdererNode.ContainerName)
-	// ipv4 := strings.Split(fabricOrdererNode.Interfaces[0].Ipv4Addr, "/")[0]
-	// for _, iface := range fabricOrdererNode.Interfaces {
-	// 	if strings.HasPrefix(iface.IfName, "fo") && strings.HasSuffix(iface.IfName, "_idx1") {
-	// 		ipv4 = strings.Split(fabricOrdererNode.Interfaces[0].Ipv4Addr, "/")[0]
-	// 		break
-	// 	}
-	// 	fmt.Printf("IfName: %s, Ipv4Addr: %s,Ifidx:%d,LinkIdentifier:%d\n", iface.IfName, iface.Ipv4Addr, iface.Ifidx, iface.LinkIdentifier)
-	// }
+	ipv4 := strings.Split(fabricOrdererNode.Interfaces[0].Ipv4Addr, "/")[0]
+	for _, iface := range fabricOrdererNode.Interfaces {
+		if strings.HasPrefix(iface.IfName, "fo") && strings.HasSuffix(iface.IfName, "_idx1") {
+			ipv4 = strings.Split(fabricOrdererNode.Interfaces[0].Ipv4Addr, "/")[0]
+			break
+		}
+	}
 
 	// 4. 创建容器卷映射
 	volumes := []string{
@@ -101,8 +100,9 @@ func CreateFabricOrdererNode(client *docker.Client, fabricOrdererNode *nodes.Fab
 		fmt.Sprintf("%s=%s", "ORDERER_ADMIN_TLS_ROOTCAS", "[/var/hyperledger/orderer/tls/ca.crt]"),
 		fmt.Sprintf("%s=%s", "ORDERER_ADMIN_TLS_CLIENTROOTCAS", "[/var/hyperledger/orderer/tls/ca.crt]"),
 		fmt.Sprintf("%s=%s", "ORDERER_ADMIN_LISTENADDRESS", fmt.Sprintf("0.0.0.0:%d", orderAdminListenStartPort)),
-		fmt.Sprintf("%s=%s", "ORDERER_OPERATIONS_LISTENADDRESS", fmt.Sprintf("orderer%d.example.com:%d", fabricOrdererNode.Id, orderOperationListenStartPort)),
+		// fmt.Sprintf("%s=%s", "ORDERER_OPERATIONS_LISTENADDRESS", fmt.Sprintf("orderer%d.example.com:%d", fabricOrdererNode.Id, orderOperationListenStartPort)),
 		// fmt.Sprintf("%s=%s", "ORDERER_OPERATIONS_LISTENADDRESS", fmt.Sprintf("%s:%d", ipv4, orderOperationListenStartPort)),
+		fmt.Sprintf("%s=%s", "ORDERER_OPERATIONS_LISTENADDRESS", fmt.Sprintf("0.0.0.0:%d", orderOperationListenStartPort)),
 		fmt.Sprintf("%s=%s", "ORDERER_METRICS_PROVIDER", "prometheus"),
 	}
 
@@ -166,8 +166,8 @@ func CreateFabricOrdererNode(client *docker.Client, fabricOrdererNode *nodes.Fab
 		Tty:          true,
 		Env:          envs,
 		ExposedPorts: exposedPorts,
-		Hostname:     fmt.Sprintf(fmt.Sprintf("orderer%d", fabricOrdererNode.Id)),
-		Domainname:   fmt.Sprintf("example.com"),
+		// Hostname:     fmt.Sprintf(fmt.Sprintf("orderer%d", fabricOrdererNode.Id)),
+		// Domainname:   fmt.Sprintf("example.com"),
 		// Cmd: []string{
 		// 	"peer node start",
 		// },
@@ -175,11 +175,11 @@ func CreateFabricOrdererNode(client *docker.Client, fabricOrdererNode *nodes.Fab
 	// 9. hostConfig
 	hostConfig := &container.HostConfig{
 		// 容器数据卷映射
-		Binds:      volumes,
-		CapAdd:     []string{"NET_ADMIN"},
-		Privileged: true,
-		Sysctls:    sysctls,
-		// ExtraHosts:   []string{fmt.Sprintf("orderer%d.example.com:%s", fabricOrdererNode.Id, ipv4)},
+		Binds:        volumes,
+		CapAdd:       []string{"NET_ADMIN"},
+		Privileged:   true,
+		Sysctls:      sysctls,
+		ExtraHosts:   []string{fmt.Sprintf("orderer%d.example.com:%s", fabricOrdererNode.Id, ipv4)},
 		PortBindings: portBindings,
 		Resources:    resourcesLimit,
 		//指定宿主机作为DNS服务器

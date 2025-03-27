@@ -102,6 +102,8 @@ queryInstalled 1
 
 ## now approve also for org2
 # approveForMyOrg 2
+
+
 for ((i=1;i<=PEER_NUM;i++));do
   approveForMyOrg ${i}
 done
@@ -123,9 +125,11 @@ for ((i=1;i<=PEER_NUM;i++));do
   checkCommitReadiness ${i} "${checkcommit_array[@]}"
 done
 
+#changed
 ## now that we know for sure both orgs have approved, commit the definition
 my_array=($(seq 1 ${PEER_NUM}))
 commitChaincodeDefinition ${my_array[@]}
+
 
 ## query on both orgs to see that the definition committed successfully
 # queryCommitted 1
@@ -133,6 +137,7 @@ commitChaincodeDefinition ${my_array[@]}
 for ((i=1;i<=PEER_NUM;i++));do
   queryCommitted ${i}
 done
+
 
 ## Invoke the chaincode - this does require that the chaincode have the 'initLedger'
 ## method defined
@@ -143,4 +148,4 @@ else
   chaincodeInvokeInit ${my_array[@]}
 fi
 
-exit 0
+# exit 0

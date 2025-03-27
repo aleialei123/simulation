@@ -1,0 +1,8 @@
+/bin/ip -6 route add 2001:db8:1234:5678::e encap seg6 mode encap segs 2001:db8:1234:5678::10,2001:db8:1234:5678::e dev fo6_idx1
+/bin/ip -6 route add 2001:db8:1234:5678::9 encap seg6 mode encap segs 2001:db8:1234:5678::10,2001:db8:1234:5678::,2001:db8:1234:5678::9 dev fo6_idx1
+/bin/ip -6 route add 2001:db8:1234:5678::3 encap seg6 mode encap segs 2001:db8:1234:5678::10,2001:db8:1234:5678::,2001:db8:1234:5678::3 dev fo6_idx1
+/bin/ip -6 route add 2001:db8:1234:5678::5 encap seg6 mode encap segs 2001:db8:1234:5678::10,2001:db8:1234:5678::,2001:db8:1234:5678::5 dev fo6_idx1
+/bin/ip -6 route add 2001:db8:1234:5678::7 encap seg6 mode encap segs 2001:db8:1234:5678::10,2001:db8:1234:5678::,2001:db8:1234:5678::7 dev fo6_idx1
+/bin/ip -6 route add 2001:db8:1234:5678::b encap seg6 mode encap segs 2001:db8:1234:5678::10,2001:db8:1234:5678::b dev fo6_idx1
+/bin/ip -6 route add 2001:db8:1234:5678:: encap seg6 mode encap segs 2001:db8:1234:5678::10,2001:db8:1234:5678:: dev fo6_idx1
+/bin/ip -6 route add 2001:db8:1234:5678::d encap seg6 mode encap segs 2001:db8:1234:5678::10,2001:db8:1234:5678::d dev fo6_idx1

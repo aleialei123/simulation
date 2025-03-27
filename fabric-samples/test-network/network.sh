@@ -478,6 +478,19 @@ function networkDown() {
     echo "Deleting volume: $volume"
     docker volume rm "$volume"
   done
+
+  DOCKER_ROUTING_MAPPING="docker_routing_mapping.txt"
+  while IFS=" " read -r subnet ip_eth0; do
+    # 确保读取到有效的子网和网关地址
+    if [[ -n "$subnet" && -n "$ip_eth0" ]]; then
+        # 删除路由
+        ip route del $subnet via $ip_eth0
+        echo "Deleted: $subnet via $ip_eth0"
+    else
+        echo "Warning: Invalid line in $DOCKER_ROUTING_MAPPING, skipping..."
+    fi
+done < "$DOCKER_ROUTING_MAPPING"
+
   # Don't remove the generated artifacts -- note, the ledgers are always removed
   if [ "$MODE" != "restart" ]; then
     #Cleanup the chaincode containers
